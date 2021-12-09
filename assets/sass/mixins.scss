@@ -1,0 +1,25 @@
+@mixin clearfix {
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+
+    }
+}
+
+a { 
+
+	color: white;
+	text-decoration: underline; 
+
+}
+
+@mixin breakpoint($query) {
+
+    @if $query == mobile { @media (min-width: 0px) and (max-width: 650px) { @content; } }
+    @else if $query == tablet { @media (min-width: 650px) and (max-width: 900px) { @content; } }
+    @else if $query == tabletXL { @media (min-width: 900px) and (max-width: 1350px) { @content; } }
+    @else if $query == desktop { @media (min-width: 1350px) { @content; } }
+
+}

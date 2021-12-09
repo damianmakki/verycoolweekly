@@ -1,0 +1,228 @@
+body { 
+
+	@include clearfix; 
+	font-family: 'Quicksand', Helvetica, sans-serif;
+	font-weight: 400;
+	background: $secondary-color;
+	color: white;
+	padding-bottom: 150px; 
+	border-top: 10px solid $primary-color; 
+
+}
+
+::selection {
+	background: $primary-color;
+}
+
+* { box-sizing: border-box; }
+
+a { text-decoration: none; color: $primary-color; }
+
+.button { 
+
+	padding: 10px 20px; 
+	background: $primary-color; 
+	color: $secondary-color; 
+	border-radius: 3px;
+	font-family: 'Permanent Marker'; 
+
+	&.disabled {
+
+		opacity: 0.2;
+		
+	}
+}
+
+.container { 
+
+	margin: 0 auto; 
+	width: 80%;
+	max-width: 800px; 
+	line-height: 1.5;
+
+	@include breakpoint(mobile) { width: 90%; }
+
+	.header { 
+
+		display: flex; 
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 50px;
+		margin-bottom: 100px;
+
+		@include breakpoint(mobile) { margin-top: 30px; margin-bottom: 60px; }
+
+		h1 { 
+
+			margin-left: 20px; 
+			font-size: 18px; 
+			text-align: right; 
+			max-width: 500px;
+			font-weight: 300;  
+
+			@include breakpoint(mobile) { font-size: 11px; }
+
+		}
+
+		img { 
+
+			width: 150px; 
+
+			@include breakpoint(mobile) { width: 85px; }
+
+		}
+
+	}
+}
+
+.page-title {
+
+	font-family: "Permanent Marker";
+	font-size: 36px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.campaign, .campaign-section {
+
+	border: 1px solid $primary-color;
+	border-radius: 3px; 
+	padding: 40px; 
+	position: relative; 
+	float: left;
+
+	+.campaign-section { margin-top: 40px; }
+
+	@include breakpoint(mobile) { padding: 20px; }
+
+	img { 
+
+		width: 100%;
+		border-radius: 3px;
+
+	}
+
+	p { + p { margin-top: 20px; }}
+
+	&--header {
+
+		span { 
+
+			background: $primary-color; 
+			position: absolute; 
+			top: 0; 
+			right: 0; 
+			padding: 5px; 
+			border-bottom-left-radius: 3px; 
+			color: $secondary-color; 
+			font-weight: 700; 
+			font-size: 10px; 
+			text-transform: uppercase; 
+
+		}
+	}
+
+	&--body {
+
+		margin-bottom: 40px; 
+
+	}
+
+	+.campaign { margin-top: 40px; }
+}
+
+#mc_embed_signup {
+
+	position: fixed;
+	bottom: 0;
+	background: $primary-color;
+	height: 100px;
+	width: 100%;
+	left: 0;
+	color: $secondary-color;
+	display: flex;
+
+	@include breakpoint(mobile) { height: 120px; padding: 0; }
+
+	label { 
+
+		text-transform: uppercase; 
+		font-weight: 900;
+		font-size: 10px;
+		float: left;
+		width: 100%;
+
+	}
+
+	input { 
+
+		background: none; 
+		border-radius: 3px;
+		border: 1px solid $secondary-color;
+		font-family: 'Quicksand';
+		font-size: 14px; 
+		padding: 10px; 
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	form { 
+
+		display: flex;
+		align-items: center;
+
+		@include breakpoint(mobile) { margin-bottom: 30px; }
+
+		button, .button { 
+
+			border: none; 
+			background: $secondary-color;
+			color: $primary-color;
+			padding: 10px 20px; 
+			font-family: 'Permanent Marker';
+			cursor: pointer;
+			border-radius: 3px;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			-webkit-appearance: none;
+
+		}
+
+	}
+
+	.container {
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include breakpoint(mobile) { flex-direction: column; justify-content: space-between;}
+
+	}
+	
+	h2 { 
+
+		font-family: 'Permanent Marker'; 
+		font-size: 24px;
+
+	}
+}
+
+.item {
+
+	float: left;
+
+	&:first-child { img { margin-top: 0; }}
+
+	img { margin-top: 100px; margin-bottom: 10px;  }
+
+	&--title { font-weight: 700; font-size: 18px; width: 100%; float: left; }
+
+	&--creator { width: 100%; float: left; font-size: 12px; text-transform: uppercase;  }
+
+	p { margin-top: 20px; float: left; }
+
+}
+
+.thanks { text-align: center; margin-top: 40px; float: left; width: 100%; }
+

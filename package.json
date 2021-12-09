@@ -1,0 +1,33 @@
+{
+  "name": "sourced-adventures",
+  "version": "2.0.0",
+  "description": "Sourced Adventures 2.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Upstatement/timber-starter-theme.git"
+  },
+  "author": "Damian Makki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Upstatement/timber-starter-theme/issues"
+  },
+  "homepage": "https://github.com/Upstatement/timber-starter-theme#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0"
+  }
+}

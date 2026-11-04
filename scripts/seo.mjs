@@ -23,7 +23,7 @@ export function pageGraph({config,title,description,path='',schema,social,issues
  if(path==='archive/'){
   page.mainEntity={'@id':`${canonical}#editions`};
   graph.push({'@type':'ItemList','@id':`${canonical}#editions`,name:'Very Cool Weekly editions',numberOfItems:issues.length,
-   itemListElement:issues.map((issue,index)=>({'@type':'ListItem',position:index+1,name:issue.title,url:absolute(`${issue.slug}/`)}))});
+   itemListElement:issues.map((issue,index)=>({'@type':'ListItem',position:index+1,name:issue.title,url:issue.url||absolute(`${issue.slug}/`)}))});
  }
  return {'@context':'https://schema.org','@graph':graph};
 }

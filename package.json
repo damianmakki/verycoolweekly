@@ -19,7 +19,8 @@
     "social:plan": "node scripts/plan-x.mjs",
     "editorial": "node scripts/editorial-cli.mjs",
     "review": "node scripts/review-server.mjs",
-    "preferences": "node scripts/preferences-cli.mjs"
+    "preferences": "node scripts/preferences-cli.mjs",
+    "sync:substack": "node scripts/sync-substack.mjs"
   },
   "devDependencies": {
     "cheerio": "^1.1.2",

@@ -54,6 +54,9 @@ test('generated commercial web and email editions preserve disclosures, tracking
  try{
   for(const path of ['scripts','assets','content'])await cp(resolve(path),join(dir,path),{recursive:true});
   for(const path of ['site.config.json','favicon-32x32.png','apple-touch-icon-152x152.png'])await cp(resolve(path),join(dir,path));
+  const fixtureSite=JSON.parse(await readFile(join(dir,'site.config.json'),'utf8'));
+  fixtureSite.publishing={source:'local'};
+  await import('node:fs/promises').then(fs=>fs.writeFile(join(dir,'site.config.json'),JSON.stringify(fixtureSite)));
   // Resolve dependencies without installing anything in the fixture.
   const {symlink}=await import('node:fs/promises');await symlink(resolve('node_modules'),join(dir,'node_modules'),'dir');
   const issue={...base,status:'published',date:'2020-01-03',sponsor:{name:'Studio',title:'Studio tool',url:'https://example.org/sponsor',description:'Sponsored copy.'},products:[{kind:'affiliate',title:'Paid pick',url:'https://example.org/product?aff=123',description:'A useful product.',disclosure:'We earn a commission if you buy through this link.',track:true}]};

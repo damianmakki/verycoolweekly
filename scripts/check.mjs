@@ -2,6 +2,7 @@ import { readFile, readdir, stat } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import * as cheerio from 'cheerio';
 import { loadIssues, visibleIssues, validateIssues } from './lib.mjs';
+import { indexPosts } from './substack.mjs';
 const config=JSON.parse(await readFile('site.config.json')),base=new URL(config.url),errors=[];
 const all=await loadIssues();errors.push(...validateIssues(all));
 async function files(dir){return (await Promise.all((await readdir(dir,{withFileTypes:true})).map(async d=>d.isDirectory()?files(`${dir}/${d.name}`):[`${dir}/${d.name}`]))).flat();}
@@ -46,13 +47,30 @@ for(const file of html){
  }
 }
 const sitemap=await readFile('dist/sitemap.xml','utf8'),feed=await readFile('dist/feed.xml','utf8');
-for(const i of all){
- const url=new URL(`${i.slug}/`,config.url).href;
- if(visibleIssues([i]).length){if(!sitemap.includes(url)||!feed.includes(url))errors.push(`${i.slug}: missing from discovery feeds`);}
- else if(sitemap.includes(url)||feed.includes(url))errors.push(`${i.slug}: unpublished issue leaked into discovery feeds`);
+const rss=cheerio.load(feed,{xmlMode:true}),jsonFeed=JSON.parse(await readFile('dist/feed.json','utf8'));
+const snapshot=JSON.parse(await readFile('content/substack/posts.json','utf8'));
+const posts=indexPosts(snapshot.posts,all,config);
+if(rss('item').length!==posts.length||jsonFeed.items.length!==posts.length)errors.push('public feeds do not match the Substack index');
+for(const post of posts){
+ const id=post.legacyUrl||post.url;
+ const item=rss('item').toArray().find(el=>rss(el).find('guid').text()===id);
+ const body=item?rss(item).children().filter((_,node)=>node.tagName==='content:encoded').text():'';
+ const json=jsonFeed.items.find(entry=>entry.id===id);
+ if(!body||body!==post.contentHtml||json?.content_html!==body)errors.push(`${post.title}: missing or inconsistent Substack feed content`);
+ if(item&&rss(item).find('link').text()!==post.url)errors.push(`${post.title}: incorrect Substack destination`);
+}
+const home=cheerio.load(await readFile('dist/index.html','utf8'));
+if(posts.length&&home('.latest-edition-title a').attr('href')!==posts[0].url)errors.push('homepage preview does not match the newest Substack post');
+const archive=cheerio.load(await readFile('dist/archive/index.html','utf8'));
+if(archive('.issue-card').length!==posts.length)errors.push('archive index does not match Substack');
+for(const post of posts)if(!archive('.issue-card h3 a').toArray().some(el=>archive(el).attr('href')===post.url))errors.push(`${post.title}: missing from archive index`);
+for(const issue of all){
+ const url=new URL(`${issue.slug}/`,config.url).href;
+ if(issue.archived&&visibleIssues([issue]).length){if(!sitemap.includes(url))errors.push(`${issue.slug}: preserved archive page is missing from sitemap`);}
+ else if(sitemap.includes(url))errors.push(`${issue.slug}: local non-archive issue leaked into the Substack-led website`);
 }
 const optimized=JSON.parse(await readFile('assets/optimized/manifest.json'));
-for(const i of visibleIssues(all))for(const image of [i.hero,...i.items.map(x=>x.image),...(i.products||[]).map(x=>x.image),i.sponsor?.image].filter(Boolean)){
+for(const i of visibleIssues(all.filter(issue=>issue.archived)))for(const image of [i.hero,...i.items.map(x=>x.image),...(i.products||[]).map(x=>x.image),i.sponsor?.image].filter(Boolean)){
  if(!optimized[image.src])errors.push(`${i.slug}: image has not been optimized: ${image.src}`);
 }
-if(errors.length){console.error(errors.join('\n'));process.exitCode=1;}else console.log(`Checked ${html.length} pages: local links, images, metadata, headings, structured data, paid placements, and draft visibility passed.`);
+if(errors.length){console.error(errors.join('\n'));process.exitCode=1;}else console.log(`Checked ${html.length} pages: local links, images, metadata, headings, structured data, paid placements, preserved archive routes, Substack index, full-text feeds, and draft visibility passed.`);

@@ -2,44 +2,41 @@
 
 Independent design and development picks curated by Damian Makki.
 
-Canonical home: **https://ruckuslabs.co/verycoolweekly/**
+- Branded website: **https://ruckuslabs.co/verycoolweekly/**
+- Publishing source: **https://verycoolweekly.substack.com/**
 
-The homepage introduces the newsletter and links to signup, advertiser information, and the archives. All pages share aligned navigation, a green signup panel, and the footer. The homepage features the original Very Cool logo in its main introduction; other pages keep it in the header. This repository builds the responsive static website and portable HTML/text email editions from structured issue files. All eleven original 2017 issues and their 74 editorial picks are preserved.
+Write, review, and publish the complete edition once in Substack. The website imports published posts into its homepage preview and archive index, with links to the full Substack editions. All eleven original website issue URLs and their 74 editorial picks remain available.
 
 ```sh
 npm ci
+npm run sync:substack
 npm run build
 npm run preview
 ```
 
-Use Node 22+. The preview prints its local URL. Production output is in `dist/`; email source editions are in `exports/emails/`.
+Use Node 22+. The preview prints its local address. Output is in `dist/`. Builds use the cached public Substack snapshot and require no network access; `sync:substack` refreshes it. A failed local refresh retains the last successful snapshot. CI uses `--strict`, so a failed refresh cannot replace the deployed site with an older build.
 
 ```sh
-npm run new:issue -- --date 2026-11-06 --title "Issue 12: A new chapter"
-npm run optimize
-npm run build -- --drafts
 npm test
-npm run build
 npm run check
 npm run export:ruckus
 ```
 
-Drafts and future editions are excluded from production. Paid sponsorships, products, and affiliate recommendations are optional and visibly labeled. Weekly email uses Substack. Website signup links to the verified Very Cool Weekly subscription page; the inactive Mailchimp form is removed. X publishing is being prepared for Buffer Free, with paid services disabled.
+The parent website's deployment workflow checks Substack hourly at minute 17 and rebuilds only when published content changes. GitHub schedules can run late. Manual deployments refresh Substack before building too. These workflow changes take effect after publication of both repositories.
 
-- [Research, thumbs up/down review, and publishing hopper](docs/EDITORIAL-WORKFLOW.md)
-- [Weekly content sources and collection routine](sources.md)
-- [X article drip, Friday roundup, and automation plan](docs/X-POSTING.md)
-- [Publishing workflow, commercial slots, and launch checklist](docs/PUBLISHING.md)
-- [Substack expansion assessment and pilot](docs/SUBSTACK.md)
-- Shared settings: `site.config.json`
-- Issue template: `content/templates/issue.json`
-- Commercial examples: `content/templates/commercial-slots.json`
+The index combines the current feed with cached older posts, so older editions remain listed after leaving Substack's rolling feed window. Each successful deployment carries this archive history forward in `assets/substack-index.json`. The public `feed.xml` and `feed.json` URLs mirror complete Substack posts and images; historical feed IDs are preserved for existing subscribers. `archive-import.xml` remains a separate historical migration artifact and does not send email.
+
+The Editors Desk remains the research and review workspace. Its Substack, X, and Notes drafts are still prepared locally; author approval and native Substack publication are unchanged. Local non-archive issue files no longer publish new website editions, and `web:stage` explains the new workflow. Existing drafts, review decisions, and delivery records remain intact.
+
+- [Research and review workflow](docs/EDITORIAL-WORKFLOW.md)
+- [Publishing and website refresh](docs/PUBLISHING.md)
+- [Substack workflow and history](docs/SUBSTACK.md)
+- [X and Notes](docs/X-POSTING.md)
+- [Discovery sources](sources.md)
 - Shared layout: `scripts/build.mjs`; styles: `assets/site.css`
-- Page and article structured data: `scripts/seo.mjs`
-- Social sharing artwork: `assets/images/social-card.svg` and its PNG export
-- Shared logo: `assets/images/verycool.svg` (public site and Editors Desk)
-- Active icons: `favicon-32x32.png` and `apple-touch-icon-152x152.png`
-
-Original archive image paths and animations remain available for historical links. Optimized previews are tracked in `assets/optimized/manifest.json`. The completed one-time importer and unused legacy icon variants have been removed.
-
-The Friday GitHub workflow validates and produces downloadable web/email artifacts. Deployment to Ruckus and live email delivery remain separate, explicit operations.
+- Public Substack snapshot: `content/substack/posts.json`
+- Feed parser, sanitization, and archive retention: `scripts/substack.mjs`
+- Feed refresh: `scripts/sync-substack.mjs`
+- Compatibility feeds: `scripts/feeds.mjs`
+- Structured data: `scripts/seo.mjs`
+- Shared logo: `assets/images/verycool.svg`

@@ -100,7 +100,12 @@ export function createSocialPlan(issue, config, site, {now=new Date(), example=f
       url,text,localDate,localTime,timeZone:config.timeZone,
       scheduledAt:zonedInstant(localDate,localTime,config.timeZone),requiresLiveIssue:false};
   });
-  const summaryUrl = new URL(`${issue.slug}/`, site.url);
+  const substackSource=site.publishing?.source==='substack';
+  if(substackSource&&issue.substackPostUrl){
+    if(!httpUrl(issue.substackPostUrl)||new URL(issue.substackPostUrl).origin!==new URL(site.subscription.publicationUrl).origin||!new URL(issue.substackPostUrl).pathname.startsWith('/p/'))throw new Error('Set the actual Substack post URL for this edition');
+  }
+  if(substackSource&&!issue.substackPostUrl)blockers.push('Add the actual published Substack post URL before scheduling the roundup');
+  const summaryUrl = substackSource?new URL(issue.substackPostUrl||site.subscription.publicationUrl):new URL(`${issue.slug}/`, site.url);
   summaryUrl.searchParams.set('utm_source','x');
   summaryUrl.searchParams.set('utm_medium','social');
   summaryUrl.searchParams.set('utm_campaign',issue.slug);
@@ -109,7 +114,7 @@ export function createSocialPlan(issue, config, site, {now=new Date(), example=f
   posts.push({id:`${issue.slug}:x:roundup`,kind:'roundup',url:summaryUrl.href,
     text:`${summaryCopy}\n\n${summaryUrl.href}`.normalize('NFC'),
     localDate:issue.date,localTime:config.roundupTime,timeZone:config.timeZone,
-    scheduledAt:zonedInstant(issue.date,config.roundupTime,config.timeZone),requiresLiveIssue:true});
+    scheduledAt:zonedInstant(issue.date,config.roundupTime,config.timeZone),requiresLiveIssue:!substackSource,...(substackSource?{requiresPublishedSubstackPost:true,missingSubstackUrl:!issue.substackPostUrl}:{})});
 
   const daily = new Map();
   for (const post of posts) {
@@ -126,6 +131,6 @@ export function createSocialPlan(issue, config, site, {now=new Date(), example=f
 
   return {version:1,account:config.account,profileUrl:`https://x.com/${config.account}`,issue:issue.slug,
     issueDate:issue.date,timeZone:config.timeZone,delivery:'export-only',example,
-    generatedAt:now.toISOString(),contentHash:hash({issue,config,siteUrl:site.url}),
+    generatedAt:now.toISOString(),contentHash:hash({issue,config,siteUrl:site.url,...(substackSource?{publication:site.subscription.publicationUrl,publishingSource:'substack'}:{})}),
     approvedAt:null,readyToReview:blockers.length===0,blockers,posts};
 }

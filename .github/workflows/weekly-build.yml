@@ -1,12 +1,9 @@
-name: Build weekly editions
+name: Check newsletter website
 on:
   push:
     branches: [master, main]
   pull_request:
   workflow_dispatch:
-  schedule:
-    # Friday, 13:00 UTC. Scheduled editions become eligible by date (UTC).
-    - cron: '0 13 * * 5'
 permissions:
   contents: read
 jobs:
@@ -24,8 +21,7 @@ jobs:
       - run: npm run check
       - uses: actions/upload-artifact@v4
         with:
-          name: verycoolweekly-web-and-email
+          name: verycoolweekly-website
           path: |
             dist/
-            exports/emails/
           retention-days: 14

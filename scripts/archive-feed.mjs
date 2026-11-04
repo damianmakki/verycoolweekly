@@ -1,6 +1,6 @@
 import { escape as e, rich } from './lib.mjs';
 
-// A migration feed, separate from the summary feed read by existing subscribers.
+// The historical migration feed remains separate from the full-text public feeds.
 export function archiveFeed(issues, site, images = {}) {
   const absolute = path => new URL(path, site.url).href;
   const cdata = value => `<![CDATA[${value.replaceAll(']]>', ']]]]><![CDATA[>')}]]>`;

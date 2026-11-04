@@ -2,39 +2,36 @@
 
 The website is owned by this repository; email delivery is a separate service. The public home is **https://ruckuslabs.co/verycoolweekly/**. Each issue file is the single source for its web page, HTML email, text email, archive entry, and feed entry. Original issue URLs (issue-one through issue-eleven) are preserved under the new base path.
 
-## Local setup
+## Current publishing workflow: Substack first
 
-Use Node 22 or newer. Run `npm ci`, `npm run build`, and `npm run preview`. Open the printed local address. The output is `dist/`; HTML and text email exports are in `exports/emails/`, outside the public site. Generated output is ignored in this repository. Optimized images and their manifest are checked in, so builds and CI need no remote image downloads.
+Substack is the sole publishing source for new editions. Review in the Editors Desk, prepare the approved Substack draft, and publish or schedule it in Substack's native editor. That one publication handles the full web post and intended email/app delivery. Do not separately publish a new local website issue or send a provider-neutral email export.
 
-The old Gulp/Sass setup has been replaced with a Node static generator. Edit shared layout in `scripts/build.mjs`, styles in `assets/site.css`, and publication settings in `site.config.json`.
+The website retains its custom homepage, signup, sponsor and policy pages. The homepage and archive index are built from Substack's public RSS feed; title, date, summary, and image links come from published posts. Read links lead to Substack. All eleven original `/issue-one/` through `/issue-eleven/` website pages remain available with their historical content and dates. Existing local future editions and private review/delivery records are preserved, but they cannot become new public website articles in Substack mode.
 
-## Create a weekly edition
-
-1. Run `npm run new:issue -- --date 2026-11-06 --title "Issue 12: A new chapter"`. This creates a draft in `content/issues/` and never overwrites an existing file.
-2. Replace every TODO and example URL. Write a specific description, personal introduction, and 5–7 useful editorial picks. Use source URLs from the original publisher. Use plain text for titles, HTML only for `introHtml` and `bodyHtml`. Supported formatting is paragraphs, emphasis, lists, code, and HTTP(S) links; other markup is stripped.
-3. Add a hero and optional item images. Local `image.src` paths are relative to the project root, without a leading slash. Supply accurate alt text; a title is an acceptable fallback for an archive preview, but describe new images properly. For remote artwork, confirm you can republish it and credit the creator.
-4. Run `npm run optimize` when adding or replacing images. It downloads remote images once and stores responsive WebP previews under `assets/optimized/`. Large animations use a static preview with an on-demand original. If replacing an existing image, use a new filename/URL or remove its manifest entry to invalidate the cache.
-5. Run `npm run build -- --drafts`, then `npm run preview`. This preview includes drafts and future editions and adds noindex metadata to every page. Never export a draft preview to production.
-6. Run `npm test`. Review every source and commercial destination. Check desktop, phone, text-only email, spelling, image credits, and disclosures. Do not claim you tested a product unless you did.
-7. Mark the issue `published` for immediate eligibility, or `scheduled` with a future date. Both are excluded until their date (UTC); an optional `publishAt` timestamp also gates the exact website release instant. Use `web:stage` below for reviewed timed releases. Email delivery has its own native Substack schedule. `draft` is always excluded. Non-archive placeholder copy blocks publication.
-8. Run `npm run build && npm run check`. Production builds clear stale email exports and draft previews. Run `npm run export:ruckus` to copy this build into the sibling Ruckus Labs checkout. The export removes stale files only when they were recorded in this project's previous export manifest. It does not touch other Ruckus pages.
-9. Publish the Ruckus Labs repository through its normal process. Confirm the web page and image URLs work publicly before scheduling the email. Prepare the generated Substack edition in verycoolweekly.substack.com, verify its subscription/footer settings, send a test, and schedule the reviewed weekly email. Do not also send the provider-neutral email export.
-
-`npm run export:ruckus` always rebuilds production and runs checks first. The source repository's Friday CI workflow builds artifacts only. Website deployment is handled by `RuckusLabs/ruckuslabs.co` through `.github/workflows/deploy-pages.yml`: it checks out the newsletter source from `damianmakki/verycoolweekly` on `master`, runs its tests/build/checks, builds the existing Ruckus site with Jekyll, overlays only newsletter `dist/` at `/verycoolweekly/`, and deploys through GitHub Pages. Private reviews, local exports and source scripts are excluded from the website artifact. Pushes to Ruckus `main`, manual runs and Friday 9 a.m. America/Denver builds use the same process. GitHub schedules may run late; no exact-time delivery is guaranteed. Website deployment never sends email or schedules social posts.
-
-### Stage an approved website release
-
-The production workflow was enabled and its first deployment verified on November 4, 2026: [successful deployment](https://github.com/RuckusLabs/ruckuslabs.co/actions/runs/41881053290). Home, signup, archive and feeds were checked publicly; Issue 12 remains absent until November 13 at 9 a.m. Mountain. Friday Substack email scheduling is still held by the user. Jekyll's container creates root-owned files, so the overlay step restores runner ownership of the generated `_site` artifact before replacing its newsletter folder.
-
-After preparing the approved hopper, run:
+## Refresh and preview
 
 ```sh
-npm run web:stage -- --batch 2026-11-13 --at 2026-11-13T09:00:00-07:00
+npm ci
+npm run sync:substack
+npm run build
+npm run preview
+npm test
+npm run check
 ```
 
-This verifies current review/configuration fingerprints, backs up any existing issue privately under `exports/backups/`, and writes the approved issue into `content/issues/` with `status: scheduled` and an explicit `publishAt` instant. It preserves delivery ledgers and remote queues. The default build excludes the issue, its archive entry and its feed/sitemap entries until both its publication date and release time are due. `--drafts` is a local noindex preview only. Legacy archive issues without `publishAt` retain their original date-based behavior.
+`sync:substack` retrieves the public publication feed, sanitizes its HTML, normalizes public post URLs and images, and excludes future publication dates. It merges older cached posts that have rolled beyond the current RSS window; posts removed inside the current window disappear from the index. It carries the previous deployed index forward from `assets/substack-index.json`, avoiding archive loss on fresh deployment runners. The snapshot at `content/substack/posts.json` contains only public content.
 
-Commit only the approved publication source and required code/assets to the newsletter repository, keeping `content/review/` and `exports/` private. The hosted Friday build reads that committed source, not the local desk. Validate proposed changes before updating the release source. Changes to Ruckus source should use its normal deployment process; preserve unrelated local edits. Inspect the deployment result and public URLs before marking the website delivered. The Friday email remains a draft until the user releases its explicit hold.
+A normal build is offline and deterministic from its cached snapshot. A failed local refresh uses the existing snapshot. Deployment uses `sync:substack -- --strict`; a refresh failure stops the build and leaves the current live site untouched. No Substack credentials or unpublished feed endpoints are used.
+
+The root Ruckus workflow checks for Substack changes hourly at minute 17 and skips a scheduled deployment when the normalized public index has not changed. GitHub schedules may run late. A manual website deployment always performs a fresh sync. The newsletter repository's CI validates source changes and builds a preview artifact; it does not send email or publish the root site.
+
+## Website delivery
+
+Run `npm run export:ruckus` to rebuild, check, and refresh the sibling website export. Its manifest removes only files managed by the newsletter export. Preserve unrelated Ruckus work. Changes in both repositories must be reviewed and published before the hourly refresh workflow becomes active. Until then, the local preview is the review surface.
+
+The public RSS and JSON Feed keep their existing URLs, contain the full sanitized Substack edition and available images, and retain historical website GUIDs for the original imported editions. New entries use Substack post IDs/URLs. The homepage, archive, feed mirrors, and JSON-LD archive list all share the same published Substack index. Local authoring files cannot leak into these surfaces.
+
+The historical `archive-import.xml` remains available for recovery/migration, without re-importing anything into Substack. Do not repeat the original eleven-issue import or send retrospective emails. Full posts and reader engagement now live on Substack; maintain original website archive links and regular backups.
 
 ## Visual direction
 

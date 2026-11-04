@@ -58,7 +58,8 @@ export function buildHopper(batch,config,site,{now=new Date()}={}) {
   const selected=approvedCandidates(batch);
   if(!selected.length)throw new Error('No approved, edited picks are ready; nothing was queued');
   if(selected.length>8)throw new Error('Select at most eight picks for one edition');
-  const issue={number:batch.issueNumber,slug:batch.issueSlug,date:batch.date,status:'draft',archived:false,
+  const substackSource=site.publishing?.source==='substack';
+  const issue={...(batch.substackPostUrl?{substackPostUrl:batch.substackPostUrl}:{}),number:batch.issueNumber,slug:batch.issueSlug,date:batch.date,status:'draft',archived:false,
     title:batch.issueTitle||`Issue ${batch.issueNumber}`,
     description:selected.map(c=>c.title).join('; ').slice(0,160),
     hero:{src:'assets/images/verycool.png',alt:'Very Cool Weekly'},
@@ -68,11 +69,12 @@ export function buildHopper(batch,config,site,{now=new Date()}={}) {
   const errors=validateIssues([issue]);if(errors.length)throw new Error(errors.join('\n'));
   // Article approval permits previewing picks before Friday; it does not publish the issue.
   const x=createSocialPlan({...issue,status:'scheduled'},config,site,{now});
-  const fingerprint=digest({issue,selection:selected.map(c=>({id:c.id,hash:c.approvedHash})),config});
+  const fingerprint=digest({issue,selection:selected.map(c=>({id:c.id,hash:c.approvedHash})),config,...(substackSource?{publishingSource:'substack',publicationUrl:site.subscription.publicationUrl}:{})});
   const at=now.toISOString();
-  const jobs=x.posts.map(p=>({...p,channel:'x',state:p.missedSlot?'needs-reschedule':config.publishingProvider==='buffer-free'&&config.buffer?.channelId?'ready-for-buffer-scheduling':'waiting-connection',candidateId:p.kind==='article'?selected[x.posts.indexOf(p)].id:null}));
-  const editionUrl=new URL(`${issue.slug}/`,site.url).href;
-  const postHtml=`<h1>${e(issue.title)}</h1>${rich(issue.introHtml)}${selected.map(c=>`<h2><a href="${e(c.url)}">${e(c.title)}</a></h2>${rich(c.copy.bodyHtml)}`).join('')}<p>Curated by ${e(site.author.name)}. <a href="${editionUrl}">Read this edition on the Very Cool Weekly website</a>.</p>`;
+  const jobs=x.posts.map(p=>({...p,channel:'x',state:p.missedSlot?'needs-reschedule':p.missingSubstackUrl?'waiting-substack-url':config.publishingProvider==='buffer-free'&&config.buffer?.channelId?'ready-for-buffer-scheduling':'waiting-connection',candidateId:p.kind==='article'?selected[x.posts.indexOf(p)].id:null}));
+  const editionUrl=substackSource?site.url:new URL(`${issue.slug}/`,site.url).href;
+  const websiteLinkLabel=substackSource?'Visit the Very Cool Weekly website':'Read this edition on the Very Cool Weekly website';
+  const postHtml=`<h1>${e(issue.title)}</h1>${rich(issue.introHtml)}${selected.map(c=>`<h2><a href="${e(c.url)}">${e(c.title)}</a></h2>${rich(c.copy.bodyHtml)}`).join('')}<p>Curated by ${e(site.author.name)}. <a href="${editionUrl}">${websiteLinkLabel}</a>.</p>`;
   const emailHtml=`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${e(issue.title)}</title></head><body style="max-width:640px;margin:32px auto;padding:0 20px;font-family:Arial,sans-serif;line-height:1.6">${postHtml}<p><a href="{{ unsubscribe_url }}">Unsubscribe</a><br>{{ mailing_address }}</p></body></html>`;
   const notePicks=selected.length<=3?selected:[selected[0],selected[Math.floor(selected.length/2)],selected.at(-1)];
   const notes=notePicks.map((c,n)=>{
@@ -82,7 +84,7 @@ export function buildHopper(batch,config,site,{now=new Date()}={}) {
       scheduledAt,state:Date.parse(scheduledAt)<=now.getTime()?'needs-reschedule':'manual-scheduling',requiresLiveIssue:false};
   });
   const releaseAt=zonedInstant(issue.date,'09:30',config.timeZone);
-  jobs.push(...notes,{id:`${issue.slug}:substack:edition`,channel:'substack-edition',scheduledAt:releaseAt,state:'manual-scheduling',requiresLiveIssue:true,exclusiveDeliveryGroup:`${issue.slug}:weekly-email`});
+  jobs.push(...notes,{id:`${issue.slug}:substack:edition`,channel:'substack-edition',scheduledAt:releaseAt,state:'manual-scheduling',requiresLiveIssue:!substackSource,exclusiveDeliveryGroup:`${issue.slug}:weekly-email`});
   jobs.push({id:`${issue.slug}:email:edition`,channel:'email',scheduledAt:releaseAt,state:site.subscription?.provider==='substack'?'disabled-use-substack':'choose-email-provider',requiresLiveIssue:true,exclusiveDeliveryGroup:`${issue.slug}:weekly-email`});
   const waiting=batch.candidates.filter(c=>c.decision==='approved'&&!selected.some(s=>s.id===c.id)).map(c=>c.id);
   return {issue,postHtml,emailHtml,notes,manifest:{version:1,batch:batch.date,issue:issue.slug,contentHash:fingerprint,

@@ -73,3 +73,18 @@ test('discovery plans stay attached to approved picks and tag changes require re
  const invalid=structuredClone(approved);invalid.discovery.entities[0].accounts.x.evidenceUrl='javascript:alert(1)';
  assert.throws(()=>approvedCandidates({...batch,candidates:[invalid]}),/evidence/);
 });
+
+test('Substack-first drafts do not require a website issue and X roundups wait for the actual post URL',()=>{
+ const approved=reviewCandidate(candidate,{decision:'approved'});
+ const substackSite={...site,subscription:{provider:'substack',publicationUrl:'https://verycoolweekly.substack.com/'},publishing:{source:'substack'}};
+ const result=buildHopper({...batch,candidates:[approved]},config,substackSite,{now});
+ assert.equal(result.manifest.jobs.find(j=>j.channel==='substack-edition').requiresLiveIssue,false);
+ assert.notEqual(result.manifest.contentHash,buildHopper({...batch,candidates:[approved]},config,site,{now}).manifest.contentHash);
+ assert.equal(result.manifest.jobs.find(j=>j.kind==='roundup').state,'waiting-substack-url');
+ assert.ok(!result.postHtml.includes('https://ruckuslabs.co/verycoolweekly/issue-12/'));
+ const ready=buildHopper({...batch,candidates:[approved],substackPostUrl:'https://verycoolweekly.substack.com/p/actual-post-slug'},config,substackSite,{now});
+ const roundup=ready.manifest.jobs.find(j=>j.kind==='roundup');
+ assert.equal(new URL(roundup.url).pathname,'/p/actual-post-slug');
+ assert.equal(roundup.requiresPublishedSubstackPost,true);assert.equal(roundup.missingSubstackUrl,false);
+ assert.throws(()=>buildHopper({...batch,candidates:[approved],substackPostUrl:'https://example.org/wrong-post'},config,substackSite,{now}),/actual Substack post URL/);
+});

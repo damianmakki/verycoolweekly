@@ -2,6 +2,8 @@ import {readFile,writeFile,mkdir,rename} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {buildHopper} from './editorial.mjs';
 import {validateIssues} from './lib.mjs';
+const publication=JSON.parse(await readFile('site.config.json','utf8'));
+if(publication.publishing?.source==='substack')throw new Error('Publish or schedule the reviewed edition in Substack. The website imports published posts automatically.');
 const args=process.argv.slice(2),arg=k=>args[args.indexOf(k)+1];
 const date=args.includes('--batch')?arg('--batch'):null,at=args.includes('--at')?arg('--at'):null;
 if(!/^\d{4}-\d{2}-\d{2}$/.test(date||'')||!at||!/(Z|[+-]\d{2}:\d{2})$/.test(at)||!Number.isFinite(Date.parse(at)))throw new Error('Use --batch YYYY-MM-DD --at a timestamp with timezone');

@@ -14,5 +14,8 @@
   "sponsorContact": "https://ruckuslabs.co/#contact",
   "social": {
     "x": "https://x.com/verycoolweekly"
+  },
+  "publishing": {
+    "source": "substack"
   }
 }

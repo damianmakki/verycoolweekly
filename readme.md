@@ -4,7 +4,7 @@ Independent design and development picks curated by Damian Makki.
 
 Canonical home: **https://ruckuslabs.co/verycoolweekly/**
 
-The homepage is a compact splash page linking to signup, advertiser information, and the archives. This repository builds the responsive static website and portable HTML/text email editions from structured issue files. All eleven original 2017 issues and their 74 editorial picks are preserved.
+The homepage introduces the newsletter and links to signup, advertiser information, and the archives. All pages share the same header and footer, using the original Very Cool logo. This repository builds the responsive static website and portable HTML/text email editions from structured issue files. All eleven original 2017 issues and their 74 editorial picks are preserved.
 
 ```sh
 npm ci
@@ -30,11 +30,14 @@ Drafts and future editions are excluded from production. Paid sponsorships, prod
 - [Weekly content sources and collection routine](sources.md)
 - [X article drip, Friday roundup, and automation plan](docs/X-POSTING.md)
 - [Publishing workflow, commercial slots, and launch checklist](docs/PUBLISHING.md)
-- [Email provider comparison and recommendation](docs/EMAIL-PROVIDERS.md)
 - [Substack expansion assessment and pilot](docs/SUBSTACK.md)
 - Shared settings: `site.config.json`
 - Issue template: `content/templates/issue.json`
 - Commercial examples: `content/templates/commercial-slots.json`
 - Shared layout: `scripts/build.mjs`; styles: `assets/site.css`
+- Shared logo: `assets/images/verycool.svg` (public site and Editors Desk)
+- Active icons: `favicon-32x32.png` and `apple-touch-icon-152x152.png`
+
+Original archive image paths and animations remain available for historical links. Optimized previews are tracked in `assets/optimized/manifest.json`. The completed one-time importer and unused legacy icon variants have been removed.
 
 The Friday GitHub workflow validates and produces downloadable web/email artifacts. Deployment to Ruckus and live email delivery remain separate, explicit operations.

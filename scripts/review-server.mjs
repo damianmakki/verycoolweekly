@@ -82,7 +82,7 @@ export function createReviewServer({root = resolve(dirname(fileURLToPath(import.
       if (req.method === 'GET' && ['/', '/review.js', '/review.css', '/logo.svg'].includes(url.pathname)) {
         const file = url.pathname === '/' ? 'review.html' : url.pathname.slice(1);
         res.writeHead(200, {'Content-Type':file.endsWith('.html')?'text/html; charset=utf-8':file.endsWith('.js')?'text/javascript; charset=utf-8':file.endsWith('.svg')?'image/svg+xml':'text/css; charset=utf-8','Cache-Control':'no-store'});
-        return res.end(await readFile(resolve(root,'scripts/review-ui',file)));
+        return res.end(await readFile(file === 'logo.svg' ? resolve(root,'assets/images/verycool.svg') : resolve(root,'scripts/review-ui',file)));
       }
       if (req.method === 'GET' && url.pathname === '/api/batches') {
         const dates = (await readdir(resolve(root,'content/review'))).filter(f => datePattern.test(f.slice(0,-5)) && f.endsWith('.json')).map(f=>f.slice(0,-5)).sort().reverse();

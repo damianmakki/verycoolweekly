@@ -495,7 +495,7 @@ main { flex: 1; }
 .brand { display: block; }
 .brand img { width: 96px; height: 96px; }
 .site-header-home { min-height: 96px; justify-content: flex-end; }
-.site-header-home nav { margin-left: auto; }
+.site-header-home nav { margin-inline-start: auto; justify-content: flex-end; }
 .site-footer { border-top: 0; padding-block: 28px; }
 .footer-brand { display: flex; align-items: center; }
 .footer-brand img { width: 48px; height: 48px; }
@@ -507,6 +507,12 @@ main { flex: 1; }
 .footer-ruckus img { width: 88px; height: auto; }
 
 /* A quiet introduction, with the original graphic as its only heading. */
+.splash-page main, .archive-page main { text-align: start; }
+.splash-page, .archive-page { --content-gutter: 32px; }
+.splash-page main > .wrap, .archive-page main > .wrap { margin-inline-start: var(--content-gutter); margin-inline-end: auto; }
+@media (max-width: 800px) {
+  .splash-page, .archive-page { --content-gutter: 20px; }
+}
 .splash { padding-block: 64px 76px; }
 .splash-logo { width: 160px; margin: 0 0 30px; }
 .splash-logo img { width: 100%; height: auto; }

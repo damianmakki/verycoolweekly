@@ -11,5 +11,8 @@
     "provider": "substack",
     "publicationUrl": "https://verycoolweekly.substack.com/"
   },
-  "sponsorContact": "https://ruckuslabs.co/#contact"
+  "sponsorContact": "https://ruckuslabs.co/#contact",
+  "social": {
+    "x": "https://x.com/verycoolweekly"
+  }
 }

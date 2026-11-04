@@ -4,7 +4,7 @@ Independent design and development picks curated by Damian Makki.
 
 Canonical home: **https://ruckuslabs.co/verycoolweekly/**
 
-The homepage introduces the newsletter and links to signup, advertiser information, and the archives. All pages share the same header and footer, using the original Very Cool logo. This repository builds the responsive static website and portable HTML/text email editions from structured issue files. All eleven original 2017 issues and their 74 editorial picks are preserved.
+The homepage introduces the newsletter and links to signup, advertiser information, and the archives. All pages share aligned navigation, a green signup panel, and the footer. The homepage features the original Very Cool logo in its main introduction; other pages keep it in the header. This repository builds the responsive static website and portable HTML/text email editions from structured issue files. All eleven original 2017 issues and their 74 editorial picks are preserved.
 
 ```sh
 npm ci
@@ -35,6 +35,8 @@ Drafts and future editions are excluded from production. Paid sponsorships, prod
 - Issue template: `content/templates/issue.json`
 - Commercial examples: `content/templates/commercial-slots.json`
 - Shared layout: `scripts/build.mjs`; styles: `assets/site.css`
+- Page and article structured data: `scripts/seo.mjs`
+- Social sharing artwork: `assets/images/social-card.svg` and its PNG export
 - Shared logo: `assets/images/verycool.svg` (public site and Editors Desk)
 - Active icons: `favicon-32x32.png` and `apple-touch-icon-152x152.png`
 

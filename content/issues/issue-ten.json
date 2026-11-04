@@ -1,0 +1,67 @@
+{
+  "number": 10,
+  "slug": "issue-ten",
+  "title": "Issue Ten",
+  "date": "2017-06-23",
+  "status": "published",
+  "archived": true,
+  "description": "Issue Ten: Amazon's New Customer; Behind the Scenes of the Westworld UI; Four Hip Hop Links Every Friday. Design and development picks from 2017.",
+  "hero": {
+    "src": "assets/images/issue-ten-hero.jpg",
+    "alt": "Very Cool Weekly Issue Ten"
+  },
+  "introHtml": "<p>Welcome to Issue Ten of Very Cool Weekly.<br>\n<br>\nTen Issues is ten weeks! Thanks for sticking with me so far - it's been a lot of fun curating these Issues. Here's to ten more weeks!<br><br>\nThis week we've got a breakdown of Amazon's purchase of Whole Foods (from a strategic perspective), behind-the-scenes details on some awesome futuristic UI/VFX, a new site that collects the best four hip hop songs every week, a dive into how the world's top messaging apps onboard their users, and an exciting modular gaming controller concept.\n<br><br>\nI'd also like to ask that if you're enjoying what you're reading, please consider <a href=\"http://twitter.com/home?status=I read @verycoolweekly and I think you should too! It's a weekly newsletter for designers and developers! Signup at makki.pro/verycoolweekly\">sharing @verycoolweekly on Twitter</a>. It really goes a long way!</p>",
+  "items": [
+    {
+      "title": "Amazon's New Customer",
+      "url": "https://stratechery.com/2017/amazons-new-customer/",
+      "source": "via Stratechery",
+      "bodyHtml": "<p>It's becoming more and more clear that Amazon is set on becoming the most dominant company of all time. Their acquisitions are calculated and strategic which is why this week's purchase of Whole Foods wasn't all that surprising. Stratechery breaks down the laser-focus of Amazon and supposes some of Amazon's intentions in this interesting analysis.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/64221015-d733-4d5d-8416-b34ef7c8438d.jpg",
+        "alt": "Amazon's New Customer"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Behind the Scenes of the Westworld UI",
+      "url": "http://www.vanschneider.com/behind-the-scenes-of-the-westworld-ui/",
+      "source": "via Tobias Van Schneider",
+      "bodyHtml": "<p>I'm a total sucker for sci-fi. As a designer, though, the UI of \"futuristic\" devices is always interesting to dive into. Tobias talks with Chris Kieffer of <em>Westworld</em> (and <em>Passengers, Interstellar, G.I. Joe</em>) about the design behind these (and all the attention to detail!).</p>",
+      "kind": "editorial",
+      "imageUnavailable": true
+    },
+    {
+      "title": "Four Hip Hop Links Every Friday",
+      "url": "http://www.franklinsweekly.com/",
+      "source": "via Franklin's Weekly",
+      "bodyHtml": "<p>At least two of us out here love hip hop. Which is why <em>Franklin's Weekly</em> is a pretty exciting project. Every week Franklin chooses four hip hop tracks to share on his site. While they may already be in your rotation, the chance of discovering something new is definitely exciting!</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/b4030852-9ed4-4bdc-8ddd-38bb3e2beb08.jpg",
+        "alt": "Franklin's Weekly"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "How the Best Messaging Apps Onboard Users",
+      "url": "https://www.appcues.com/blog/user-onboarding-messaging-apps/",
+      "source": "via AppCues",
+      "bodyHtml": "<p>So many messaging apps. A few billion users each. How do you onboard and explain such different interfaces to new users? AppCues does a deep-dive and explores how some of the big players like WeChat, Viber, WhatsApp, LINE, and Facebook Messenger onboard the right way.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/448022d4-1462-480c-909c-f93132fd9714.jpg",
+        "alt": "AppCues"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "EXEO Modular Controllers",
+      "url": "http://www.core77.com/projects/66792/EXEO-Modular-Gaming-Controllers-Allow-You-to-Design-Your-Own-Controller-for-Each-Game",
+      "source": "via Core77",
+      "bodyHtml": "<p>Ohhhh boy. If you know me you know I'm into video games. My favorite controller, the Duke from the original Xbox, has both fans and critics. The EXEO concept from Sushant Vohra aims to modularize gaming controllers to provide a varied and customized experience for any gamer.</p>",
+      "kind": "editorial",
+      "imageUnavailable": true
+    }
+  ],
+  "sponsor": null,
+  "products": []
+}

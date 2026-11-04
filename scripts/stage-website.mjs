@@ -1,0 +1,24 @@
+import {readFile,writeFile,mkdir,rename} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {buildHopper} from './editorial.mjs';
+import {validateIssues} from './lib.mjs';
+const args=process.argv.slice(2),arg=k=>args[args.indexOf(k)+1];
+const date=args.includes('--batch')?arg('--batch'):null,at=args.includes('--at')?arg('--at'):null;
+if(!/^\d{4}-\d{2}-\d{2}$/.test(date||'')||!at||!/(Z|[+-]\d{2}:\d{2})$/.test(at)||!Number.isFinite(Date.parse(at)))throw new Error('Use --batch YYYY-MM-DD --at a timestamp with timezone');
+const batch=JSON.parse(await readFile(`content/review/${date}.json`)),queue=JSON.parse(await readFile(`exports/hopper/${date}/queue.json`));
+const hash=createHash('sha256').update(JSON.stringify(batch)).digest('hex');
+if(queue.invalidatedAt||queue.reviewHash!==hash)throw new Error('Prepare current approved drafts before staging the website.');
+const [config,site]=await Promise.all(['social.config.json','site.config.json'].map(async p=>JSON.parse(await readFile(p))));
+const result=buildHopper(batch,config,site);
+if(result.manifest.contentHash!==queue.contentHash)throw new Error('Prepared copy/configuration changed; prepare drafts again.');
+const release=new Date(at),localDate=new Intl.DateTimeFormat('en-CA',{timeZone:config.timeZone,year:'numeric',month:'2-digit',day:'2-digit'}).format(release);
+if(localDate!==date)throw new Error('The release must fall on the edition date in its configured timezone.');
+const issue={...result.issue,status:'scheduled',publishAt:release.toISOString()};
+const errors=validateIssues([issue]);if(errors.length)throw new Error(errors.join('\n'));
+const target=`content/issues/${issue.slug}.json`,dir=`exports/backups/website-${Date.now()}`;
+await mkdir(dir,{recursive:true});
+let previous;try{previous=await readFile(target,'utf8');await writeFile(`${dir}/${issue.slug}.json`,previous);}catch(e){if(e.code!=='ENOENT')throw e;}
+if(previous!==undefined&&(await readFile(target,'utf8'))!==previous)throw new Error('Website issue changed during staging; retry from latest state.');
+await writeFile(`${target}.tmp`,JSON.stringify(issue,null,2)+'\n');await rename(`${target}.tmp`,target);
+await writeFile(`${dir}/approval.json`,JSON.stringify({batch:date,reviewHash:hash,contentHash:queue.contentHash,selected:queue.selected,publishAt:issue.publishAt},null,2)+'\n');
+console.log(`Staged ${issue.items.length} approved picks for ${issue.publishAt}; prior issue backed up privately. No delivery records changed.`);

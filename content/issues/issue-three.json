@@ -1,0 +1,106 @@
+{
+  "number": 3,
+  "slug": "issue-three",
+  "title": "Issue Three",
+  "date": "2017-05-05",
+  "status": "published",
+  "archived": true,
+  "description": "Issue Three: Creating Usability with Motion: The UX in Motion Manifesto; TQ ANimation Gallery; Interviews with Amazing Designers. Design and development picks…",
+  "hero": {
+    "src": "assets/images/issue-three-hero.jpg",
+    "alt": "Very Cool Weekly Issue Three"
+  },
+  "introHtml": "<p>Lots of motion in this Issue - both some awesome showcases and some resources for learning it. Interviews with amazing designers, some beautiful things for your home (wallpaper included), and a great look at how you may be making mistakes onboarding your users.</p>",
+  "items": [
+    {
+      "title": "Creating Usability with Motion: The UX in Motion Manifesto",
+      "url": "https://medium.com/ux-in-motion/creating-usability-with-motion-the-ux-in-motion-manifesto-a87a4584ddc/",
+      "source": "via Medium",
+      "bodyHtml": "<p>A little over a year ago (!) I was turned onto the UX In Motion training videos to help build my After Effects skills and build some really cool animations to help prototype. Issara (the creator of UX In Motion) was able to convey a TON of information in an easily digestible way - just through the introductory videos. He's back with a stunning, in-depth article discussing his 12 principles of motion (accompanied with some very cool GIFs).</p>",
+      "image": {
+        "src": "issue-three/images/uxinmotion.gif",
+        "alt": "Creating Usability with Motion: The UX in Motion Manifesto"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "TQ ANimation Gallery",
+      "url": "https://www.behance.net/gallery/32094133/TQ-shop-website-concept",
+      "source": "via Behance",
+      "bodyHtml": "<p>Speaking of motion, Anton Skvortsov put together an absolutely breathtaking concept site. Bonus points if you can pick out some of Issara's 12 principles of motion!</p>",
+      "image": {
+        "src": "issue-three/images/tqshop.gif",
+        "alt": "TQ ANimation Gallery"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Interviews with Amazing Designers",
+      "url": "https://interfacelovers.com/",
+      "source": "via Interface Lovers",
+      "bodyHtml": "<p>I stumbled upon Interface Lovers thanks to Product Hunt this week. The site is home to some pretty insightful interviews with top-tier designers. Lots of great content to read through - they even integrate the designer's Spotify playlists!</p>",
+      "image": {
+        "src": "issue-three/images/interfacelovers.jpg",
+        "alt": "Interviews with Amazing Designers"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Nendo Reveals New, Adjustable Lighting for FLOS",
+      "url": "http://design-milk.com/nendo-reveals-new-adjustable-lighting-for-flos/",
+      "source": "via Design Milk",
+      "bodyHtml": "<p>Everyone wants beautiful things in their home. Gaku is a modular box outfitted with a lamp that's designed to be customizable. The set has myriad accessories including bowls, vases, a tray, mirrors, and bookends to fit your tastes. And that matte black? Perfect.</p>",
+      "image": {
+        "src": "issue-three/images/lighting.jpg",
+        "alt": "Nendo Reveals New, Adjustable Lighting for FLOS"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "A phone or a computer or both?",
+      "url": "https://medium.com/samsung-internet-dev/samsung-dex-brings-a-new-dimension-to-the-mobile-web-f80d7edcab29",
+      "source": "via Medium",
+      "bodyHtml": "<p>While there have been attempts to bridge the gap between phone and desktop before, but most have ultimately failed due to unimaginative UX experiences, lack of processing power, or just a lack of use. Samsung's popular S8 may prove to have the popularity to make DeX, Samsung's take on a desktop experience running from a mobile device a hit. Plus who doesn't love seeing Progressive Web Apps get some attention?!</p>",
+      "image": {
+        "src": "issue-three/images/dex.jpeg",
+        "alt": "A phone or a computer or both?"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Corner",
+      "url": "https://dribbble.com/shots/3277984-Corner",
+      "source": "via Dribbble",
+      "bodyHtml": "<p>Just a beautiful display of motion design from Kate Laguta for M2H agency.</p>",
+      "image": {
+        "src": "issue-three/images/corner.gif",
+        "alt": "Corner"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Electric Wallpaper",
+      "url": "https://www.fastcodesign.com/90124014/this-wallpaper-doubles-as-a-power-source",
+      "source": "via Fast Company",
+      "bodyHtml": "<p>While essentially an art installation, Flavor Paper - a wallpaper company from Brooklyn - put together Conduct which is on display at NYCxDesign. It's an exploration of how practical conductive ink could be used as both a functional and artistic piece of design.</p>",
+      "image": {
+        "src": "issue-three/images/light.gif",
+        "alt": "Electric Wallpaper"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Bulletproof User Onboarding",
+      "url": "https://ux.useronboard.com/bulletproof-user-onboarding-f34ee03f655f",
+      "source": "via User Onboard",
+      "bodyHtml": "<p>I may be saving this primarily for myself this week, but Samuel's (awesome) article discusses how user onboarding is such a fragile (yet completely essential) component of online products. We've all experienced those helpful tooltips when we first use a new online service. How helpful are they really, though?</p>",
+      "image": {
+        "src": "issue-three/images/bulletproof.png",
+        "alt": "Bulletproof User Onboarding"
+      },
+      "kind": "editorial"
+    }
+  ],
+  "sponsor": null,
+  "products": []
+}

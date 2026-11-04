@@ -1,0 +1,16 @@
+{
+  "number": 12,
+  "slug": "issue-12",
+  "title": "Issue 12",
+  "date": "2026-11-06",
+  "status": "draft",
+  "archived": false,
+  "description": "TODO: A specific, concise summary of this week's design, development, and product picks.",
+  "hero": {"src":"assets/images/verycool.png","alt":"Very Cool Weekly"},
+  "introHtml": "<p>TODO: Write a short personal introduction to this week's edition.</p>",
+  "items": [
+    {"kind":"editorial","title":"TODO: A useful editorial pick","url":"https://example.com/replace-me","source":"Original publisher","bodyHtml":"<p>TODO: Explain why this is worth a reader's time in your own words.</p>"}
+  ],
+  "sponsor": null,
+  "products": []
+}

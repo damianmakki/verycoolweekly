@@ -1,0 +1,84 @@
+{
+  "number": 8,
+  "slug": "issue-eight",
+  "title": "Issue Eight",
+  "date": "2017-06-09",
+  "status": "published",
+  "archived": true,
+  "description": "Issue Eight: Why you should just say no to Helvetica; Fancy Designer Job Titles; A typeface that caused NZ residents to question their cultural identity. Design…",
+  "hero": {
+    "src": "assets/images/issue-eight-hero.jpg",
+    "alt": "Very Cool Weekly Issue Eight"
+  },
+  "introHtml": "<p>Welcome to Issue Eight of Very Cool Weekly.<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tI've got another batch of interesting articles for you this week! First up we've got the father of grunge typography on why you should just say no to Helvetica, a breakdown of all the different (but same) design job titles, an existential crisis caused by a typeface, a really great argument <em>against</em> the hamburger menu, some design resources straight from Apple, and some really intuitive new volume sliders.<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tAre you enjoying Very Cool Weekly? If so, share it with someone who might think it's interesting. It goes a long way and would mean a lot to me.\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tHave a great weekend!</p>",
+  "items": [
+    {
+      "title": "Why you should just say no to Helvetica",
+      "url": "https://magenta.as/the-father-of-grunge-typography-calls-out-lazy-design-daae470a685a",
+      "source": "via Magenta",
+      "bodyHtml": "<p>It's easy to fall back on tried-and-true design trends. I'm guilty of it myself quite often. If something works, why change it? \"The father of grunge typography\" David Carson discusses lazy design and why Helvetica should be avoided in this insightful interview-style article from Magenta.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/29f9631b-53ac-4793-977f-34020f9d7675.jpg",
+        "alt": "Why you should just say no to Helvetica"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Fancy Designer Job Titles",
+      "url": "https://medium.com/@marcintreder/towards-new-roles-on-the-design-team-how-fancy-titles-rob-design-of-its-value-3ec35dbfacef",
+      "source": "via Medium",
+      "bodyHtml": "<p>When I talk to someone about what I do, I usually try to explain it in a way that would make sense to them. If I'm talking to someone in the business, I might use a term like \"full-stack designer.\" To my Dad? \"Graphic designer.\" The truth is, as designers, we blend a lot of different roles depending upon the situation. In this article, Marcin Treder talks about paring down the (often overwhelming) amount of titles we use to explain what we do.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/e2c8aaeb-569b-4033-aad0-0ab073818210.jpg",
+        "alt": "Fancy Designer Job Titles"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "A typeface that caused NZ residents to question their cultural identity",
+      "url": "https://eyeondesign.aiga.org/the-first-typeface-designed-specifically-for-the-maori-community-is-changing-how-new-zealand-views-its-own-cultural-identity/",
+      "source": "via Eye On Design",
+      "bodyHtml": "<p>I had no idea who or what the Māori community was before reading this piece from Eye on Design. In a fairly in-depth article, EoD discusses how New Zealand-based graphic designer Johnson Witehira caused something of an existential crisis among his community when researching what a Māori-first typeface should look like.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/195abda8-4de2-4c36-aa9a-487714003d79.jpg",
+        "alt": "A typeface that caused NZ residents to question their cultural identity"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Why Reach Navigation Should Replace the Navbar in iOS Design",
+      "url": "https://medium.com/tall-west/lets-ditch-the-nav-bar-3692cb17cc67",
+      "source": "via Medium",
+      "bodyHtml": "<p>It feels like everyday we're going back and forth on what type of menu system/navigation system works best for users. Brad Ellis makes a pretty fantastic argument for why \"reach navigation\" should replace the navbar - at least for iOS.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/7c6971db-a0ac-4b30-b9b8-6b3590c8ca83.jpg",
+        "alt": "Why Reach Navigation Should Replace the Navbar in iOS Design"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "iOS 11 Design Resources from Apple",
+      "url": "https://developer.apple.com/design/resources/",
+      "source": "via Apple",
+      "bodyHtml": "<p>While we wait for Facebook to put together a more comprehensive iOS 11 UI kit, we've got Apple to thank for the basic. Follow the jump for links to Photoshop, Sketch, and XD UI kits!</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/301588c6-83ee-4fba-b9b4-924406853bfc.jpg",
+        "alt": "iOS 11 Sketch File"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Intuitive Volume Sliders",
+      "url": "https://www.reddit.com/r/ProgrammerHumor/search?q=volume&restrict_sr=on",
+      "source": "via /r/programmerhumor",
+      "bodyHtml": "<p>Rounding out this week is a groundbreaking set of volume sliders that I, for one, will be using in future designs. Check out the link for a filtered list of solutions from the best and brightest UX designers on Reddit's /r/programmerhumor.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/08cb93b0-126a-41ac-a8f6-cdce61438776.gif",
+        "alt": "Gorgeous Zelda: BoTW Prints"
+      },
+      "kind": "editorial"
+    }
+  ],
+  "sponsor": null,
+  "products": []
+}

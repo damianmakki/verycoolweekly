@@ -1,0 +1,84 @@
+{
+  "number": 7,
+  "slug": "issue-seven",
+  "title": "Issue Seven",
+  "date": "2017-06-02",
+  "status": "published",
+  "archived": true,
+  "description": "Issue Seven: Brutalist Redesigns; The New Skype; Why Designers Quit Their Agency Jobs to Work at MoMA. Design and development picks from 2017.",
+  "hero": {
+    "src": "assets/images/issue-seven-hero.jpg",
+    "alt": "Very Cool Weekly Issue Seven"
+  },
+  "introHtml": "<p>Welcome to Issue Seven of Very Cool Weekly.<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tThis week I've put together an interesting collection of quick reads and longform articles this week. We've got some brutal brutalist redesigns, a Snapchat-inspired Skype, a look behind the scenes at MoMA designers, a beautiful (and live!) homepage redesign, and a longform article on American tech companies and their influence on the globe. There's a special surprise at the end for my video games fans, too!<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tHave a great weekend!</p>",
+  "items": [
+    {
+      "title": "Brutalist Redesigns",
+      "url": "http://www.pierrebuttin.com/",
+      "source": "Pierre Buttin",
+      "bodyHtml": "<p>Brutalism (aka \"ugly\" ) is an interesting design trend - doubly so for web design. For some reason, the aestetic has seem a resurgence recently which led Pierre Buttin to imagine what it'd look like on our phones. He goes through some of the most popular apps today and gives them the brutalist makeover. My favorite? Instagram. Gives a new meaning to \"unsolicited redesigns\" eh?</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/22febe86-d1d6-4a4e-bf29-16d4d60b1059.jpg",
+        "alt": "Brutalism"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "The New Skype",
+      "url": "https://www.skype.com/en/new/",
+      "source": "via Skype",
+      "bodyHtml": "<p>I haven't used Skype in years (thanks a ton Slack, Hangouts, WhatsApp, yadda yadda) which may be exactly why Skype is releasing an update to it's core design. Interestingly it looks like they've taken a few cues from Snapchat - but then again, who isn't these days?</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/f2adcaa9-bb9e-4ed0-b65c-1fd2ab5dde80.jpg",
+        "alt": "The New Skype"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Why Designers Quit Their Agency Jobs to Work at MoMA",
+      "url": "https://eyeondesign.aiga.org/the-fine-art-of-designing-for-a-museum-or-why-designers-quit-their-agency-jobs-to-work-at-moma/",
+      "source": "via Eye On Design",
+      "bodyHtml": "<p>\"We’d rather sell Picasso tickets than Nike shoes.\"<br><br>I've always been struck by the beauty behind the mundane when it comes to museum designs. I've always wondered what kind of designer designs the maps, the brochures and the posters. MoMA is clearly an outstanding example of a museum that's got it's design game on point. Liz Stinson from AIGA talks about what drives MoMA designers.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/ace7d2a9-951b-48af-829b-9ddab0d7dcd6.jpg",
+        "alt": "Why Designers Quit Their Agency Jobs to Work at MoMA"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Awesomed New Homepage",
+      "url": "https://dribbble.com/shots/3513249-Awesomed-new-homepage",
+      "source": "via Dribbble",
+      "bodyHtml": "<p>No that's not a typo. Awesomed is a California based design agency that recently revamped their site design. I'm always on the prowl for great designs and inspiration - especially when it comes to interesting and different layouts. The special thing about this shot? You can check it live at <a href=\"http://www.awsmd.com/\">Awesomed's</a> site!</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/ae3ef05c-2866-4c68-98e5-3d64089e7ef7.gif",
+        "alt": "Awesomed New Homepage"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Notes From An Emergency",
+      "url": "http://idlewords.com/talks/notes_from_an_emergency.htm",
+      "source": "via Idle Words",
+      "bodyHtml": "<p>I may be getting a <em>little</em> political here sharing this article, but stick with it - it relates back to design and development. It's a longform article so make sure you've got some time to read through, but basically Maciej Ceglowski spends some time discussing US tech companies and their influence on the rest of the world. You'd be surprised how much control and power (both soft and hard) the Apples, Googles, and Facebooks wield.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/13fa46cf-1c35-4973-9fb8-31fb001211a2.jpg",
+        "alt": "Notes From An Emergency"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Gorgeous Zelda: BoTW Prints",
+      "url": "http://mattandersondesign.com/shop/",
+      "source": "via Matt Anderson Design",
+      "bodyHtml": "<p>Who else games out there? Have you seen these beautiful Zelda: Breath of the Wild posters by Matt Anderson?! Even if you aren't a fan of video games, these deserve a look. My favorite? The Ancient Defender. I waited too long and now they're sold out!</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/1f315c05-7417-4a67-9470-cc2a35e56d25.jpg",
+        "alt": "Gorgeous Zelda: BoTW Prints"
+      },
+      "kind": "editorial"
+    }
+  ],
+  "sponsor": null,
+  "products": []
+}

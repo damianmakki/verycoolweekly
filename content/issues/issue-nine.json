@@ -1,0 +1,78 @@
+{
+  "number": 9,
+  "slug": "issue-nine",
+  "title": "Issue Nine",
+  "date": "2017-06-16",
+  "status": "published",
+  "archived": true,
+  "description": "Issue Nine: Designing In Iran; The New Twitter; Designing a Brand in VR. Design and development picks from 2017.",
+  "hero": {
+    "src": "assets/images/issue-nine-hero.jpg",
+    "alt": "Very Cool Weekly Issue Nine"
+  },
+  "introHtml": "<p>Welcome to Issue Nine of Very Cool Weekly.\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tI've put together a nice mix of design and development articles for you this week. We've got something near and dear to my heart: Iranian design. There's a breakdown of the new Twitter design, how to VR-first brand, a VERY FUN typography game, a technical article on how Instagram upgraded their platform serving 400,000,000 users per day, and why I switched from using tabs to using spaces in my code.\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br><br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tI'd also like to ask that if you're enjoying what you're reading, please consider <a href=\"http://twitter.com/home?status=I read @verycoolweekly and I think you should too! It's a weekly newsletter for designers and developers! Signup at makki.pro/verycoolweekly\">sharing @verycoolweekly on Twitter</a>. It really goes a long way!</p>",
+  "items": [
+    {
+      "title": "Designing In Iran",
+      "url": "http://www.vanschneider.com/design-in-iran-featuring-studio-melli/",
+      "source": "via Tobias Van Schneider",
+      "bodyHtml": "<p>As half-Iranian, this article from Tobias Van Schneider really struck a chord with me. Typically, modern Iran is perceived as very oppressive and not conducive to the arts. In an interview with <em>Studio Melli</em>, it's clear that some Iranian designers are working hard to buck that stereotype.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/fab63a8a-2927-4179-a719-2c701105b85e.jpg",
+        "alt": "Designing in Iran"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "The New Twitter",
+      "url": "https://blog.twitter.com/official/en_us/topics/product/2017/Check-out-our-new-look.html",
+      "source": "via Twitter",
+      "bodyHtml": "<p>Yesterday, Twitter launched some major design refinements to their web and iOS platforms. While I'm personally not a fan of the new circle profiles, they did a great job with some of the other core UX elements (comments vs reply, for example). Click through to read the changelog.</p>",
+      "kind": "editorial",
+      "imageUnavailable": true
+    },
+    {
+      "title": "Designing a Brand in VR",
+      "url": "https://design.google/library/speaking-volumes/",
+      "source": "via Google Design",
+      "bodyHtml": "<p>Joshua To, a design director for <em>Daydream</em> talks through navigating through VR-first brand design. While the article starts off straightforward, it quickly jumps to the complexities involved with designing a logo for VR while making it work in 2D scenarios.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/c12c4605-a4d2-4010-9700-f4008780cafa.jpg",
+        "alt": "Designing a Brand in VR"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Triangle - The Perfect Paragraph Typography Game",
+      "url": "https://betterwebtype.com/triangle",
+      "source": "via Better Web Type",
+      "bodyHtml": "<p>Does your type game need some work? Try out this game from Better Web Type and I guarantee you'll come out a better web typographer. Surprisingly, this game from Better Web Type is not only super entertaining, but super educational too. You know you wanna give it a try.</p>",
+      "kind": "editorial",
+      "imageUnavailable": true
+    },
+    {
+      "title": "Instagram Makes a Smooth Move to Python 3",
+      "url": "https://thenewstack.io/instagram-makes-smooth-move-python-3/",
+      "source": "via The New Stack",
+      "bodyHtml": "<p>400,000,000 users a day. That's an intimidating number. Consider how the Instagram team felt when they decided to upgrade their entire platform. <em>Shivers.</em> Instagram engineers Hui Ding and Lisa Guo talk about not only the technical details behind the migration, but also some of the higher-level decisions behind moving forward with such a massive project.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/5d2c63b9-12ed-414b-9ee8-7d730d4297b6.jpg",
+        "alt": "nstagram Makes a Smooth Move to Python 3"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Developers Who Use Spaces Make More Money Than Those Who Use Tabs",
+      "url": "https://stackoverflow.blog/2017/06/15/developers-use-spaces-make-money-use-tabs/",
+      "source": "via Stack Overflow Blog",
+      "bodyHtml": "<p>So I use tabs. After reading this article on Stack Overflow, I think I'm going to switch over to using spaces. You know, because it's more detailed. Right. That's definitely why. Make sure to read through some of the comments after the article. My favorite? \"WHAT IF PEOPLE WHO USE SPACES ARE PAID BY THE HOUR AND TAKE LONGER TO TYPE STUFF?\"</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/7ccd1cd0-30e4-4547-b705-5404f930e1eb.jpg",
+        "alt": "Developers Who Use Spaces Make More Money Than Those Who Use Tabs"
+      },
+      "kind": "editorial"
+    }
+  ],
+  "sponsor": null,
+  "products": []
+}

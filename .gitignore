@@ -1,2 +1,9 @@
 node_modules
 .DS_Store
+dist/
+.cache/
+exports/
+.sites-runtime/
+
+# Local editorial decisions and unpublished copy
+content/review/

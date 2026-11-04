@@ -1,0 +1,10 @@
+{
+  "sponsor": {
+    "name": "Sponsor name", "title": "What this helps readers do", "url": "https://example.com/sponsor",
+    "description": "An honest, specific introduction to the sponsor's product.", "cta": "Meet the sponsor", "track": false
+  },
+  "products": [
+    { "kind":"affiliate", "title":"A product worth recommending", "url":"https://example.com/?affiliate=YOUR_ID", "description":"Why you recommend it and who it is for.", "disclosure":"We earn a commission if you buy through this link.", "track":false },
+    { "kind":"product", "title":"A product from Ruckus Labs", "url":"https://example.com/product", "description":"What it does and why readers might want it.", "relationship":"Our product", "track":true }
+  ]
+}

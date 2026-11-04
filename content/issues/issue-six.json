@@ -1,0 +1,84 @@
+{
+  "number": 6,
+  "slug": "issue-six",
+  "title": "Issue Six",
+  "date": "2017-05-26",
+  "status": "published",
+  "archived": true,
+  "description": "Issue Six: Fluent Design in Action; One Thing Per Page Design; Little Things I Like to Do with Git. Design and development picks from 2017.",
+  "hero": {
+    "src": "assets/images/issue-six-hero.jpg",
+    "alt": "Very Cool Weekly Issue Six"
+  },
+  "introHtml": "<p>Welcome to Issue Six of Very Cool Weekly.<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tI've collected some great articles this week! We've got a beautiful showcase of Fluent Design, some interesting writing about UX when it comes to multi-step interactions, some interesting Git snippets everyone should give a read through, a critique of Apple and their walled garden holding back PWAs, a rude sendoff for Google's emoji family, and some beautiful physical ceramics by a talented designer.<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tHere's to a great Memorial Day weekend! </p>",
+  "items": [
+    {
+      "title": "Fluent Design in Action",
+      "url": "https://dribbble.com/shots/3512681-Fluent-Design-Attempt-and-3x-Dribbble-Invitations",
+      "source": "via Dribbble",
+      "bodyHtml": "<p>In #Issue4, I posted about Microsoft's Fluent Design - an answer to Google's Material Design patterns. Here we are only 2 weeks later, and we've got a beautiful showcase utilizing Fluent Design patterns. It's really impressive how different the concept flows when compared to both Google's and Apple's current design ethos.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/cbd99ace-4d0d-4a57-a782-572f59442c54.gif",
+        "alt": "Fluent Design"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "One Thing Per Page Design",
+      "url": "https://www.smashingmagazine.com/2017/05/better-form-design-one-thing-per-page/",
+      "source": "via Smashing Magazine",
+      "bodyHtml": "<p>I've flirted with using one-thing-per-page designs from time to time - especially for products intended for use by non-technical users. Most of the time, implementation/integration is a major roadblock. Adam does a great job of outlining the many reasons why one-thing-per-page designs are great for users. Definitely saving this one as a reference.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/761495ed-1746-4e80-9b3d-12fad8701d45.jpg",
+        "alt": "One Thing Per Page Design"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Little Things I Like to Do with Git",
+      "url": "https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/",
+      "source": "via CSS Wizardry",
+      "bodyHtml": "<p>I don't know if I'll ever get to the point where I consider myself a master with Git. Merging, branching, rebasing - sometimes it gets to be a lot. Harry from CSS Wizardry put together a pretty great article with some great snippets that he uses frequently. I think the \"Remind Yourself What You’ve Been Up To\" snippet is going to be especially useful.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/70ade927-6a55-48cc-80ac-18571edb097c.jpg",
+        "alt": "Little Things I Like to Do with Git"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "If It Weren’t For Apple, Hybrid App Development Would Be The Clear Winner Over Native",
+      "url": "https://hackernoon.com/if-it-werent-for-apple-hybrid-app-development-would-be-the-clear-winner-over-native-ae64fa37ad48",
+      "source": "via HackerNoon",
+      "bodyHtml": "<p>Sammich Shop makes progressive web apps (PWAs) and native iOS apps. Good ones, if I do say myself. While we bill ourselves as a primarily PWA-focused studio, we understand the limitations of PWAs - especially when it comes to the roadblocks that Apple puts up. Sam Delgado goes into some serious detail of how if Apple wasn't standing in the way, PWAs would be everywhere.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/ab086c6a-9c31-4199-a967-4e488bf5609a.jpg",
+        "alt": "PWA"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Google's Bad Emoji*",
+      "url": "https://www.theverge.com/2017/5/17/15655584/google-fixing-bad-emoji-android-o-io-2017",
+      "source": "via The Verge",
+      "bodyHtml": "<p>*is getting \"fixed\" with the launch of Android O. While I wasn't personally in love with the \"thumb-people,\" I did appreciate their quirkiness and uniqueness. There's a price to pay when everything starts looking the same....<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tAlso a <a href=\"https://www.theverge.com/2017/5/25/15688528/google-blob-emoji-android-o-rip\">contrary viewpoint</a>. </p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/55967ee1-ceff-413d-ad59-c8ca69449d09.jpg",
+        "alt": "Google's Bad Emoji*"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Beautiful Ceramics from Ryan Putnam",
+      "url": "http://ryanputn.am/ceramics-shop/",
+      "source": "via Ryan Putnam",
+      "bodyHtml": "<p>I love seeing designers that are experts in multiple fields. In particular, I think it's important for digital designers to explore physical design. Ryan Putnam is an absolutely incredible designer who also finds time to fire some beautifully unique ceramic pieces. Check out all the pieces on his shop.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/8bc7d0ef-3240-4dee-a558-9ec1823cf785.jpg",
+        "alt": "Beautiful Ceramics from Ryan Putnam"
+      },
+      "kind": "editorial"
+    }
+  ],
+  "sponsor": null,
+  "products": []
+}

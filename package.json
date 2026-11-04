@@ -1,33 +1,29 @@
 {
-  "name": "sourced-adventures",
-  "version": "2.0.0",
-  "description": "Sourced Adventures 2.0.0",
-  "main": "index.js",
-  "directories": {
-    "test": "tests"
+  "name": "very-cool-weekly",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "description": "An independent design and development newsletter, published from structured issue files.",
+  "engines": {
+    "node": ">=22"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs",
+    "new:issue": "node scripts/new-issue.mjs",
+    "web:stage": "node scripts/stage-website.mjs",
+    "optimize": "node scripts/optimize-images.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "export:ruckus": "npm run build && npm run check && node scripts/export-ruckus.mjs",
+    "social:plan": "node scripts/plan-x.mjs",
+    "editorial": "node scripts/editorial-cli.mjs",
+    "review": "node scripts/review-server.mjs",
+    "preferences": "node scripts/preferences-cli.mjs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Upstatement/timber-starter-theme.git"
-  },
-  "author": "Damian Makki",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Upstatement/timber-starter-theme/issues"
-  },
-  "homepage": "https://github.com/Upstatement/timber-starter-theme#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-clean-css": "^2.0.12",
-    "gulp-concat": "^2.6.0",
-    "gulp-htmlmin": "^2.0.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.2.0"
+    "cheerio": "^1.1.2",
+    "sharp": "^0.35.5",
+    "twitter-text": "^3.1.0"
   }
 }

@@ -1,0 +1,1849 @@
+{
+  "assets/images/issue-eight-hero.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/ff4353dd53e42c04-400.webp",
+        "width": 400,
+        "height": 201,
+        "bytes": 5176
+      },
+      {
+        "src": "assets/optimized/ff4353dd53e42c04-800.webp",
+        "width": 800,
+        "height": 402,
+        "bytes": 11830
+      },
+      {
+        "src": "assets/optimized/ff4353dd53e42c04-1194.webp",
+        "width": 1194,
+        "height": 600,
+        "bytes": 18888
+      }
+    ],
+    "originalBytes": 223003,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/29f9631b-53ac-4793-977f-34020f9d7675.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/515d2dd81b5beb4b-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 6234
+      },
+      {
+        "src": "assets/optimized/515d2dd81b5beb4b-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 19862
+      },
+      {
+        "src": "assets/optimized/515d2dd81b5beb4b-1024.webp",
+        "width": 1024,
+        "height": 614,
+        "bytes": 29074
+      }
+    ],
+    "originalBytes": 90005,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/e2c8aaeb-569b-4033-aad0-0ab073818210.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/683f9edc838895fc-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 4640
+      },
+      {
+        "src": "assets/optimized/683f9edc838895fc-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 12176
+      },
+      {
+        "src": "assets/optimized/683f9edc838895fc-1024.webp",
+        "width": 1024,
+        "height": 614,
+        "bytes": 16546
+      }
+    ],
+    "originalBytes": 43113,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/195abda8-4de2-4c36-aa9a-487714003d79.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/bca4922c52722f41-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 4260
+      },
+      {
+        "src": "assets/optimized/bca4922c52722f41-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 8744
+      },
+      {
+        "src": "assets/optimized/bca4922c52722f41-1200.webp",
+        "width": 1200,
+        "height": 720,
+        "bytes": 13008
+      }
+    ],
+    "originalBytes": 199728,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/7c6971db-a0ac-4b30-b9b8-6b3590c8ca83.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/212b3408b19b0451-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 3218
+      },
+      {
+        "src": "assets/optimized/212b3408b19b0451-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 7444
+      },
+      {
+        "src": "assets/optimized/212b3408b19b0451-1200.webp",
+        "width": 1200,
+        "height": 720,
+        "bytes": 11572
+      }
+    ],
+    "originalBytes": 122395,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/301588c6-83ee-4fba-b9b4-924406853bfc.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/7ba6d3dda00ad140-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 3220
+      },
+      {
+        "src": "assets/optimized/7ba6d3dda00ad140-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 8048
+      },
+      {
+        "src": "assets/optimized/7ba6d3dda00ad140-1200.webp",
+        "width": 1200,
+        "height": 720,
+        "bytes": 12328
+      }
+    ],
+    "originalBytes": 115233,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/08cb93b0-126a-41ac-a8f6-cdce61438776.gif": {
+    "variants": [
+      {
+        "src": "assets/optimized/7749ac051b05afe0-400.webp",
+        "width": 400,
+        "height": 200,
+        "bytes": 726
+      },
+      {
+        "src": "assets/optimized/7749ac051b05afe0-500.webp",
+        "width": 500,
+        "height": 250,
+        "bytes": 888
+      }
+    ],
+    "originalBytes": 385055,
+    "animated": true,
+    "originalSrc": "assets/originals/7749ac051b05afe0.gif",
+    "posterFrame": 100
+  },
+  "assets/images/issue-eleven-hero.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/db146016f2774055-400.webp",
+        "width": 400,
+        "height": 201,
+        "bytes": 6504
+      },
+      {
+        "src": "assets/optimized/db146016f2774055-800.webp",
+        "width": 800,
+        "height": 402,
+        "bytes": 15368
+      },
+      {
+        "src": "assets/optimized/db146016f2774055-1194.webp",
+        "width": 1194,
+        "height": 600,
+        "bytes": 24798
+      }
+    ],
+    "originalBytes": 416049,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/bc42b8f1-24a6-4ca5-9159-0183b25a9dce.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/46ee3087172b3710-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 14036
+      },
+      {
+        "src": "assets/optimized/46ee3087172b3710-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 39410
+      },
+      {
+        "src": "assets/optimized/46ee3087172b3710-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 53002
+      }
+    ],
+    "originalBytes": 417417,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/736a30d3-ee3d-4cd4-b96d-4bd42b440d16.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/54375129cb8b09d5-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 10082
+      },
+      {
+        "src": "assets/optimized/54375129cb8b09d5-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 28428
+      },
+      {
+        "src": "assets/optimized/54375129cb8b09d5-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 40306
+      }
+    ],
+    "originalBytes": 554929,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/741210b9-4b8b-4961-9f28-34803bff5b9d.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/7b5652df00890218-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 5278
+      },
+      {
+        "src": "assets/optimized/7b5652df00890218-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 11342
+      },
+      {
+        "src": "assets/optimized/7b5652df00890218-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 13878
+      }
+    ],
+    "originalBytes": 287655,
+    "animated": false
+  },
+  "assets/images/issue-five-hero.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/43b8702fdb3d1b44-400.webp",
+        "width": 400,
+        "height": 168,
+        "bytes": 8844
+      },
+      {
+        "src": "assets/optimized/43b8702fdb3d1b44-800.webp",
+        "width": 800,
+        "height": 335,
+        "bytes": 23094
+      },
+      {
+        "src": "assets/optimized/43b8702fdb3d1b44-1194.webp",
+        "width": 1194,
+        "height": 500,
+        "bytes": 37124
+      }
+    ],
+    "originalBytes": 406731,
+    "animated": false
+  },
+  "issue-five/images/designingforbuyin.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/1a77c895e6e9e658-400.webp",
+        "width": 400,
+        "height": 200,
+        "bytes": 5692
+      },
+      {
+        "src": "assets/optimized/1a77c895e6e9e658-800.webp",
+        "width": 800,
+        "height": 400,
+        "bytes": 11696
+      },
+      {
+        "src": "assets/optimized/1a77c895e6e9e658-1200.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 17080
+      }
+    ],
+    "originalBytes": 84676,
+    "animated": false
+  },
+  "issue-five/images/slowdown.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/ec07e6d9168ff92f-400.webp",
+        "width": 400,
+        "height": 200,
+        "bytes": 1544
+      },
+      {
+        "src": "assets/optimized/ec07e6d9168ff92f-800.webp",
+        "width": 800,
+        "height": 400,
+        "bytes": 3792
+      },
+      {
+        "src": "assets/optimized/ec07e6d9168ff92f-1200.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 7010
+      }
+    ],
+    "originalBytes": 56050,
+    "animated": false
+  },
+  "issue-five/images/pepe.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/866f6518d39b09b1-400.webp",
+        "width": 400,
+        "height": 200,
+        "bytes": 7634
+      },
+      {
+        "src": "assets/optimized/866f6518d39b09b1-800.webp",
+        "width": 800,
+        "height": 400,
+        "bytes": 14888
+      },
+      {
+        "src": "assets/optimized/866f6518d39b09b1-1200.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 23032
+      }
+    ],
+    "originalBytes": 119754,
+    "animated": false
+  },
+  "issue-five/images/triggers.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/6a16da94e475128f-400.webp",
+        "width": 400,
+        "height": 200,
+        "bytes": 13240
+      },
+      {
+        "src": "assets/optimized/6a16da94e475128f-800.webp",
+        "width": 800,
+        "height": 400,
+        "bytes": 29550
+      },
+      {
+        "src": "assets/optimized/6a16da94e475128f-1200.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 45464
+      }
+    ],
+    "originalBytes": 210548,
+    "animated": false
+  },
+  "issue-five/images/datepicker.gif": {
+    "variants": [
+      {
+        "src": "assets/optimized/8ae13f2903daada2-400.webp",
+        "width": 400,
+        "height": 300,
+        "bytes": 2896
+      },
+      {
+        "src": "assets/optimized/8ae13f2903daada2-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 7334
+      }
+    ],
+    "originalBytes": 1079111,
+    "animated": true,
+    "originalSrc": "issue-five/images/datepicker.gif",
+    "posterFrame": 99
+  },
+  "issue-five/images/hiddennumbers.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/c7fb056613cd04c2-400.webp",
+        "width": 400,
+        "height": 200,
+        "bytes": 46636
+      },
+      {
+        "src": "assets/optimized/c7fb056613cd04c2-800.webp",
+        "width": 800,
+        "height": 400,
+        "bytes": 147544
+      },
+      {
+        "src": "assets/optimized/c7fb056613cd04c2-1200.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 265474
+      }
+    ],
+    "originalBytes": 876540,
+    "animated": false
+  },
+  "assets/images/issue-four-hero.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/7fdad6348cc2599d-400.webp",
+        "width": 400,
+        "height": 168,
+        "bytes": 5796
+      },
+      {
+        "src": "assets/optimized/7fdad6348cc2599d-800.webp",
+        "width": 800,
+        "height": 335,
+        "bytes": 13142
+      },
+      {
+        "src": "assets/optimized/7fdad6348cc2599d-1194.webp",
+        "width": 1194,
+        "height": 500,
+        "bytes": 22926
+      }
+    ],
+    "originalBytes": 438617,
+    "animated": false
+  },
+  "issue-four/images/vox.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/8b77237f0c39c690-400.webp",
+        "width": 400,
+        "height": 225,
+        "bytes": 12588
+      },
+      {
+        "src": "assets/optimized/8b77237f0c39c690-800.webp",
+        "width": 800,
+        "height": 450,
+        "bytes": 36840
+      },
+      {
+        "src": "assets/optimized/8b77237f0c39c690-1199.webp",
+        "width": 1199,
+        "height": 674,
+        "bytes": 67804
+      }
+    ],
+    "originalBytes": 563608,
+    "animated": false
+  },
+  "issue-four/images/train.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/a3b180456acd1708-400.webp",
+        "width": 400,
+        "height": 225,
+        "bytes": 9166
+      },
+      {
+        "src": "assets/optimized/a3b180456acd1708-800.webp",
+        "width": 800,
+        "height": 450,
+        "bytes": 23244
+      },
+      {
+        "src": "assets/optimized/a3b180456acd1708-1200.webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 37782
+      }
+    ],
+    "originalBytes": 522324,
+    "animated": false
+  },
+  "issue-four/images/okc.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/19ec1b64fb86443f-400.webp",
+        "width": 400,
+        "height": 225,
+        "bytes": 580
+      },
+      {
+        "src": "assets/optimized/19ec1b64fb86443f-800.webp",
+        "width": 800,
+        "height": 450,
+        "bytes": 1502
+      },
+      {
+        "src": "assets/optimized/19ec1b64fb86443f-1199.webp",
+        "width": 1199,
+        "height": 674,
+        "bytes": 2782
+      }
+    ],
+    "originalBytes": 40399,
+    "animated": false
+  },
+  "issue-four/images/tokyobike.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/eb6027c858344d51-400.webp",
+        "width": 400,
+        "height": 267,
+        "bytes": 7372
+      },
+      {
+        "src": "assets/optimized/eb6027c858344d51-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 20234
+      },
+      {
+        "src": "assets/optimized/eb6027c858344d51-1011.webp",
+        "width": 1011,
+        "height": 674,
+        "bytes": 28318
+      }
+    ],
+    "originalBytes": 324347,
+    "animated": false
+  },
+  "issue-four/images/fluent.gif": {
+    "variants": [
+      {
+        "src": "assets/optimized/e8dda4b540d02761-400.webp",
+        "width": 400,
+        "height": 224,
+        "bytes": 1720
+      },
+      {
+        "src": "assets/optimized/e8dda4b540d02761-796.webp",
+        "width": 796,
+        "height": 446,
+        "bytes": 5866
+      }
+    ],
+    "originalBytes": 8183351,
+    "animated": true,
+    "originalSrc": "issue-four/images/fluent.gif",
+    "posterFrame": 37
+  },
+  "issue-four/images/design.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/a7d216eb8611dfab-400.webp",
+        "width": 400,
+        "height": 225,
+        "bytes": 1236
+      },
+      {
+        "src": "assets/optimized/a7d216eb8611dfab-800.webp",
+        "width": 800,
+        "height": 450,
+        "bytes": 3030
+      },
+      {
+        "src": "assets/optimized/a7d216eb8611dfab-1199.webp",
+        "width": 1199,
+        "height": 674,
+        "bytes": 5124
+      }
+    ],
+    "originalBytes": 60880,
+    "animated": false
+  },
+  "issue-four/images/mindmap.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/6a5c7bf5f423dccc-400.webp",
+        "width": 400,
+        "height": 225,
+        "bytes": 4172
+      },
+      {
+        "src": "assets/optimized/6a5c7bf5f423dccc-800.webp",
+        "width": 800,
+        "height": 450,
+        "bytes": 13626
+      },
+      {
+        "src": "assets/optimized/6a5c7bf5f423dccc-1199.webp",
+        "width": 1199,
+        "height": 674,
+        "bytes": 26868
+      }
+    ],
+    "originalBytes": 263878,
+    "animated": false
+  },
+  "assets/images/issue-nine-hero.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/485e661f3ce69723-400.webp",
+        "width": 400,
+        "height": 201,
+        "bytes": 7874
+      },
+      {
+        "src": "assets/optimized/485e661f3ce69723-800.webp",
+        "width": 800,
+        "height": 402,
+        "bytes": 18096
+      },
+      {
+        "src": "assets/optimized/485e661f3ce69723-1194.webp",
+        "width": 1194,
+        "height": 600,
+        "bytes": 28524
+      }
+    ],
+    "originalBytes": 423916,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/fab63a8a-2927-4179-a719-2c701105b85e.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/5f18e9e3f06cbc6d-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 16516
+      },
+      {
+        "src": "assets/optimized/5f18e9e3f06cbc6d-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 46130
+      },
+      {
+        "src": "assets/optimized/5f18e9e3f06cbc6d-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 61468
+      }
+    ],
+    "originalBytes": 518458,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/c12c4605-a4d2-4010-9700-f4008780cafa.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/21ede10f7efa9440-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 6126
+      },
+      {
+        "src": "assets/optimized/21ede10f7efa9440-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 13592
+      },
+      {
+        "src": "assets/optimized/21ede10f7efa9440-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 18646
+      }
+    ],
+    "originalBytes": 331854,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/5d2c63b9-12ed-414b-9ee8-7d730d4297b6.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/1a546eb81e9bccdd-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 2558
+      },
+      {
+        "src": "assets/optimized/1a546eb81e9bccdd-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 5226
+      },
+      {
+        "src": "assets/optimized/1a546eb81e9bccdd-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 6940
+      }
+    ],
+    "originalBytes": 82384,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/7ccd1cd0-30e4-4547-b705-5404f930e1eb.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/912d61565ccbc117-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 2852
+      },
+      {
+        "src": "assets/optimized/912d61565ccbc117-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 5062
+      },
+      {
+        "src": "assets/optimized/912d61565ccbc117-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 6410
+      }
+    ],
+    "originalBytes": 158851,
+    "animated": false
+  },
+  "assets/images/issue-one-hero.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/c66c1a2c6ef7a381-400.webp",
+        "width": 400,
+        "height": 168,
+        "bytes": 6606
+      },
+      {
+        "src": "assets/optimized/c66c1a2c6ef7a381-800.webp",
+        "width": 800,
+        "height": 335,
+        "bytes": 15626
+      },
+      {
+        "src": "assets/optimized/c66c1a2c6ef7a381-1194.webp",
+        "width": 1194,
+        "height": 500,
+        "bytes": 27372
+      }
+    ],
+    "originalBytes": 444145,
+    "animated": false
+  },
+  "issue-one/images/watches.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/8cd602e8ec118098-400.webp",
+        "width": 400,
+        "height": 266,
+        "bytes": 10192
+      },
+      {
+        "src": "assets/optimized/8cd602e8ec118098-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 46190
+      },
+      {
+        "src": "assets/optimized/8cd602e8ec118098-1200.webp",
+        "width": 1200,
+        "height": 799,
+        "bytes": 116394
+      }
+    ],
+    "originalBytes": 319721,
+    "animated": false
+  },
+  "issue-one/images/unsplash.gif": {
+    "variants": [
+      {
+        "src": "assets/optimized/eb133edf36d3498a-400.webp",
+        "width": 400,
+        "height": 300,
+        "bytes": 6108
+      },
+      {
+        "src": "assets/optimized/eb133edf36d3498a-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 17744
+      }
+    ],
+    "originalBytes": 6598813,
+    "animated": true,
+    "originalSrc": "issue-one/images/unsplash.gif",
+    "posterFrame": 166
+  },
+  "issue-one/images/climazone.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/9035aa7210cf37d7-400.webp",
+        "width": 400,
+        "height": 811,
+        "bytes": 37576
+      },
+      {
+        "src": "assets/optimized/9035aa7210cf37d7-800.webp",
+        "width": 800,
+        "height": 1622,
+        "bytes": 138654
+      },
+      {
+        "src": "assets/optimized/9035aa7210cf37d7-1140.webp",
+        "width": 1140,
+        "height": 2312,
+        "bytes": 264134
+      }
+    ],
+    "originalBytes": 866216,
+    "animated": false
+  },
+  "issue-one/images/beer.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/0d935fd174a1336f-400.webp",
+        "width": 400,
+        "height": 503,
+        "bytes": 21160
+      },
+      {
+        "src": "assets/optimized/0d935fd174a1336f-800.webp",
+        "width": 800,
+        "height": 1005,
+        "bytes": 67808
+      },
+      {
+        "src": "assets/optimized/0d935fd174a1336f-1200.webp",
+        "width": 1200,
+        "height": 1508,
+        "bytes": 148058
+      }
+    ],
+    "originalBytes": 534414,
+    "animated": false
+  },
+  "issue-one/images/cylinda-line.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/feacfcfb0254c49c-400.webp",
+        "width": 400,
+        "height": 599,
+        "bytes": 6006
+      },
+      {
+        "src": "assets/optimized/feacfcfb0254c49c-800.webp",
+        "width": 800,
+        "height": 1199,
+        "bytes": 14388
+      },
+      {
+        "src": "assets/optimized/feacfcfb0254c49c-1100.webp",
+        "width": 1100,
+        "height": 1648,
+        "bytes": 23362
+      }
+    ],
+    "originalBytes": 734811,
+    "animated": false
+  },
+  "issue-one/images/kdotjpeg.jpeg": {
+    "variants": [
+      {
+        "src": "assets/optimized/724e2201485f1f11-400.webp",
+        "width": 400,
+        "height": 400,
+        "bytes": 16016
+      },
+      {
+        "src": "assets/optimized/724e2201485f1f11-800.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 46120
+      },
+      {
+        "src": "assets/optimized/724e2201485f1f11-1200.webp",
+        "width": 1200,
+        "height": 1200,
+        "bytes": 100612
+      }
+    ],
+    "originalBytes": 1303852,
+    "animated": false
+  },
+  "issue-one/images/csspeeper.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/37bc0321a8ca9fb5-400.webp",
+        "width": 400,
+        "height": 290,
+        "bytes": 4642
+      },
+      {
+        "src": "assets/optimized/37bc0321a8ca9fb5-800.webp",
+        "width": 800,
+        "height": 579,
+        "bytes": 12586
+      },
+      {
+        "src": "assets/optimized/37bc0321a8ca9fb5-1200.webp",
+        "width": 1200,
+        "height": 869,
+        "bytes": 20216
+      }
+    ],
+    "originalBytes": 509278,
+    "animated": false
+  },
+  "assets/images/issue-seven-hero.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/499360139294bef8-400.webp",
+        "width": 400,
+        "height": 168,
+        "bytes": 7502
+      },
+      {
+        "src": "assets/optimized/499360139294bef8-800.webp",
+        "width": 800,
+        "height": 335,
+        "bytes": 17958
+      },
+      {
+        "src": "assets/optimized/499360139294bef8-1194.webp",
+        "width": 1194,
+        "height": 500,
+        "bytes": 28696
+      }
+    ],
+    "originalBytes": 366101,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/22febe86-d1d6-4a4e-bf29-16d4d60b1059.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/69df12cf34a3f093-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 19754
+      },
+      {
+        "src": "assets/optimized/69df12cf34a3f093-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 52076
+      },
+      {
+        "src": "assets/optimized/69df12cf34a3f093-1024.webp",
+        "width": 1024,
+        "height": 614,
+        "bytes": 69534
+      }
+    ],
+    "originalBytes": 161133,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/f2adcaa9-bb9e-4ed0-b65c-1fd2ab5dde80.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/27c7bd04cddc46f5-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 7088
+      },
+      {
+        "src": "assets/optimized/27c7bd04cddc46f5-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 17304
+      },
+      {
+        "src": "assets/optimized/27c7bd04cddc46f5-1024.webp",
+        "width": 1024,
+        "height": 614,
+        "bytes": 24102
+      }
+    ],
+    "originalBytes": 76034,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/ace7d2a9-951b-48af-829b-9ddab0d7dcd6.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/bf2732b4c2aae4af-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 16098
+      },
+      {
+        "src": "assets/optimized/bf2732b4c2aae4af-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 41232
+      },
+      {
+        "src": "assets/optimized/bf2732b4c2aae4af-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 55244
+      }
+    ],
+    "originalBytes": 699563,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/ae3ef05c-2866-4c68-98e5-3d64089e7ef7.gif": {
+    "variants": [
+      {
+        "src": "assets/optimized/d99b20d9c07e90c7-400.webp",
+        "width": 400,
+        "height": 300,
+        "bytes": 3722
+      },
+      {
+        "src": "assets/optimized/d99b20d9c07e90c7-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 12442
+      }
+    ],
+    "originalBytes": 4678442,
+    "animated": true,
+    "originalSrc": "assets/originals/d99b20d9c07e90c7.gif",
+    "posterFrame": 93
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/13fa46cf-1c35-4973-9fb8-31fb001211a2.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/148ac4df5b6d1d75-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 4090
+      },
+      {
+        "src": "assets/optimized/148ac4df5b6d1d75-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 7066
+      },
+      {
+        "src": "assets/optimized/148ac4df5b6d1d75-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 8568
+      }
+    ],
+    "originalBytes": 94592,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/1f315c05-7417-4a67-9470-cc2a35e56d25.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/26d16d2062612153-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 13132
+      },
+      {
+        "src": "assets/optimized/26d16d2062612153-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 34100
+      },
+      {
+        "src": "assets/optimized/26d16d2062612153-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 44608
+      }
+    ],
+    "originalBytes": 461761,
+    "animated": false
+  },
+  "assets/images/issue-six-hero.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/9f2edc223392a703-400.webp",
+        "width": 400,
+        "height": 168,
+        "bytes": 4832
+      },
+      {
+        "src": "assets/optimized/9f2edc223392a703-800.webp",
+        "width": 800,
+        "height": 335,
+        "bytes": 10626
+      },
+      {
+        "src": "assets/optimized/9f2edc223392a703-1194.webp",
+        "width": 1194,
+        "height": 500,
+        "bytes": 16886
+      }
+    ],
+    "originalBytes": 248907,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/cbd99ace-4d0d-4a57-a782-572f59442c54.gif": {
+    "variants": [
+      {
+        "src": "assets/optimized/a9f662e2bf81afb8-400.webp",
+        "width": 400,
+        "height": 300,
+        "bytes": 12722
+      },
+      {
+        "src": "assets/optimized/a9f662e2bf81afb8-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 40174
+      }
+    ],
+    "originalBytes": 8361845,
+    "animated": true,
+    "originalSrc": "assets/originals/a9f662e2bf81afb8.gif",
+    "posterFrame": 47
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/761495ed-1746-4e80-9b3d-12fad8701d45.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/a57d3858aea9df75-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 1742
+      },
+      {
+        "src": "assets/optimized/a57d3858aea9df75-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 2974
+      },
+      {
+        "src": "assets/optimized/a57d3858aea9df75-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 3718
+      }
+    ],
+    "originalBytes": 72662,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/70ade927-6a55-48cc-80ac-18571edb097c.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/1cf73266941efd3e-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 2142
+      },
+      {
+        "src": "assets/optimized/1cf73266941efd3e-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 5292
+      },
+      {
+        "src": "assets/optimized/1cf73266941efd3e-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 6464
+      }
+    ],
+    "originalBytes": 40971,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/ab086c6a-9c31-4199-a967-4e488bf5609a.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/305e342d49bb0c0a-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 4054
+      },
+      {
+        "src": "assets/optimized/305e342d49bb0c0a-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 7960
+      },
+      {
+        "src": "assets/optimized/305e342d49bb0c0a-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 10122
+      }
+    ],
+    "originalBytes": 95682,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/55967ee1-ceff-413d-ad59-c8ca69449d09.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/0bdadb2a60be9ad2-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 5946
+      },
+      {
+        "src": "assets/optimized/0bdadb2a60be9ad2-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 13108
+      },
+      {
+        "src": "assets/optimized/0bdadb2a60be9ad2-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 17038
+      }
+    ],
+    "originalBytes": 176037,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/8bc7d0ef-3240-4dee-a558-9ec1823cf785.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/5a488c3abaacfdb7-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 7192
+      },
+      {
+        "src": "assets/optimized/5a488c3abaacfdb7-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 18800
+      },
+      {
+        "src": "assets/optimized/5a488c3abaacfdb7-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 24290
+      }
+    ],
+    "originalBytes": 251977,
+    "animated": false
+  },
+  "assets/images/issue-ten-hero.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/d4824be28eba2603-400.webp",
+        "width": 400,
+        "height": 201,
+        "bytes": 5706
+      },
+      {
+        "src": "assets/optimized/d4824be28eba2603-800.webp",
+        "width": 800,
+        "height": 402,
+        "bytes": 12594
+      },
+      {
+        "src": "assets/optimized/d4824be28eba2603-1194.webp",
+        "width": 1194,
+        "height": 600,
+        "bytes": 20096
+      }
+    ],
+    "originalBytes": 393628,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/64221015-d733-4d5d-8416-b34ef7c8438d.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/d7c0b4188b6de2e7-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 3910
+      },
+      {
+        "src": "assets/optimized/d7c0b4188b6de2e7-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 7690
+      },
+      {
+        "src": "assets/optimized/d7c0b4188b6de2e7-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 10140
+      }
+    ],
+    "originalBytes": 80036,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/b4030852-9ed4-4bdc-8ddd-38bb3e2beb08.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/51396ac098b81411-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 16750
+      },
+      {
+        "src": "assets/optimized/51396ac098b81411-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 44910
+      },
+      {
+        "src": "assets/optimized/51396ac098b81411-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 61506
+      }
+    ],
+    "originalBytes": 616083,
+    "animated": false
+  },
+  "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/448022d4-1462-480c-909c-f93132fd9714.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/2133622f199026f9-400.webp",
+        "width": 400,
+        "height": 240,
+        "bytes": 1834
+      },
+      {
+        "src": "assets/optimized/2133622f199026f9-800.webp",
+        "width": 800,
+        "height": 480,
+        "bytes": 3734
+      },
+      {
+        "src": "assets/optimized/2133622f199026f9-1000.webp",
+        "width": 1000,
+        "height": 600,
+        "bytes": 4972
+      }
+    ],
+    "originalBytes": 104587,
+    "animated": false
+  },
+  "assets/images/issue-three-hero.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/a40d52e9e5a02ba8-400.webp",
+        "width": 400,
+        "height": 168,
+        "bytes": 3284
+      },
+      {
+        "src": "assets/optimized/a40d52e9e5a02ba8-800.webp",
+        "width": 800,
+        "height": 335,
+        "bytes": 7198
+      },
+      {
+        "src": "assets/optimized/a40d52e9e5a02ba8-1194.webp",
+        "width": 1194,
+        "height": 500,
+        "bytes": 12552
+      }
+    ],
+    "originalBytes": 265229,
+    "animated": false
+  },
+  "issue-three/images/uxinmotion.gif": {
+    "variants": [
+      {
+        "src": "assets/optimized/8294b5d235679c47-400.webp",
+        "width": 400,
+        "height": 169,
+        "bytes": 3490
+      },
+      {
+        "src": "assets/optimized/8294b5d235679c47-800.webp",
+        "width": 800,
+        "height": 339,
+        "bytes": 8538
+      },
+      {
+        "src": "assets/optimized/8294b5d235679c47-1200.webp",
+        "width": 1200,
+        "height": 508,
+        "bytes": 13904
+      }
+    ],
+    "originalBytes": 683485,
+    "animated": true,
+    "originalSrc": "issue-three/images/uxinmotion.gif",
+    "posterFrame": 18
+  },
+  "issue-three/images/tqshop.gif": {
+    "variants": [
+      {
+        "src": "assets/optimized/b96e7a3ce8cdc384-400.webp",
+        "width": 400,
+        "height": 167,
+        "bytes": 3066
+      },
+      {
+        "src": "assets/optimized/b96e7a3ce8cdc384-800.webp",
+        "width": 800,
+        "height": 334,
+        "bytes": 8958
+      },
+      {
+        "src": "assets/optimized/b96e7a3ce8cdc384-1000.webp",
+        "width": 1000,
+        "height": 418,
+        "bytes": 12014
+      }
+    ],
+    "originalBytes": 5140506,
+    "animated": true,
+    "originalSrc": "issue-three/images/tqshop.gif",
+    "posterFrame": 93
+  },
+  "issue-three/images/interfacelovers.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/c3da63260223a7ec-400.webp",
+        "width": 400,
+        "height": 212,
+        "bytes": 10612
+      },
+      {
+        "src": "assets/optimized/c3da63260223a7ec-800.webp",
+        "width": 800,
+        "height": 424,
+        "bytes": 29620
+      },
+      {
+        "src": "assets/optimized/c3da63260223a7ec-1200.webp",
+        "width": 1200,
+        "height": 635,
+        "bytes": 52078
+      }
+    ],
+    "originalBytes": 217600,
+    "animated": false
+  },
+  "issue-three/images/lighting.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/83af49b408b87ec9-400.webp",
+        "width": 400,
+        "height": 267,
+        "bytes": 2446
+      },
+      {
+        "src": "assets/optimized/83af49b408b87ec9-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 5582
+      },
+      {
+        "src": "assets/optimized/83af49b408b87ec9-1200.webp",
+        "width": 1200,
+        "height": 801,
+        "bytes": 9282
+      }
+    ],
+    "originalBytes": 30413,
+    "animated": false
+  },
+  "issue-three/images/dex.jpeg": {
+    "variants": [
+      {
+        "src": "assets/optimized/193c4af5a227d205-400.webp",
+        "width": 400,
+        "height": 232,
+        "bytes": 3400
+      },
+      {
+        "src": "assets/optimized/193c4af5a227d205-800.webp",
+        "width": 800,
+        "height": 465,
+        "bytes": 8750
+      },
+      {
+        "src": "assets/optimized/193c4af5a227d205-1200.webp",
+        "width": 1200,
+        "height": 697,
+        "bytes": 15346
+      }
+    ],
+    "originalBytes": 74853,
+    "animated": false
+  },
+  "issue-three/images/corner.gif": {
+    "variants": [
+      {
+        "src": "assets/optimized/c5cc0a888e8f5145-400.webp",
+        "width": 400,
+        "height": 300,
+        "bytes": 2974
+      },
+      {
+        "src": "assets/optimized/c5cc0a888e8f5145-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 8020
+      }
+    ],
+    "originalBytes": 4148345,
+    "animated": true,
+    "originalSrc": "issue-three/images/corner.gif",
+    "posterFrame": 88
+  },
+  "issue-three/images/light.gif": {
+    "variants": [
+      {
+        "src": "assets/optimized/fd42b867ffe70ca3-400.webp",
+        "width": 400,
+        "height": 400,
+        "bytes": 6842
+      },
+      {
+        "src": "assets/optimized/fd42b867ffe70ca3-596.webp",
+        "width": 596,
+        "height": 596,
+        "bytes": 12976
+      }
+    ],
+    "originalBytes": 224627,
+    "animated": true,
+    "originalSrc": "issue-three/images/light.gif",
+    "posterFrame": 6
+  },
+  "issue-three/images/bulletproof.png": {
+    "variants": [
+      {
+        "src": "assets/optimized/132c7ee2311d94c3-400.webp",
+        "width": 400,
+        "height": 92,
+        "bytes": 8116
+      },
+      {
+        "src": "assets/optimized/132c7ee2311d94c3-800.webp",
+        "width": 800,
+        "height": 185,
+        "bytes": 20988
+      },
+      {
+        "src": "assets/optimized/132c7ee2311d94c3-1200.webp",
+        "width": 1200,
+        "height": 277,
+        "bytes": 34398
+      }
+    ],
+    "originalBytes": 763934,
+    "animated": false
+  },
+  "assets/images/issue-two-hero.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/8a04dcf4bd033029-400.webp",
+        "width": 400,
+        "height": 168,
+        "bytes": 5058
+      },
+      {
+        "src": "assets/optimized/8a04dcf4bd033029-800.webp",
+        "width": 800,
+        "height": 335,
+        "bytes": 12856
+      },
+      {
+        "src": "assets/optimized/8a04dcf4bd033029-1194.webp",
+        "width": 1194,
+        "height": 500,
+        "bytes": 22396
+      }
+    ],
+    "originalBytes": 418922,
+    "animated": false
+  },
+  "issue-two/images/bentobox.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/f5d4d7dc69848468-400.webp",
+        "width": 400,
+        "height": 474,
+        "bytes": 11062
+      },
+      {
+        "src": "assets/optimized/f5d4d7dc69848468-500.webp",
+        "width": 500,
+        "height": 593,
+        "bytes": 17084
+      }
+    ],
+    "originalBytes": 49653,
+    "animated": false
+  },
+  "issue-two/images/behance.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/ef597fc937a13af2-400.webp",
+        "width": 400,
+        "height": 267,
+        "bytes": 6080
+      },
+      {
+        "src": "assets/optimized/ef597fc937a13af2-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 15856
+      },
+      {
+        "src": "assets/optimized/ef597fc937a13af2-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 28254
+      }
+    ],
+    "originalBytes": 125492,
+    "animated": false
+  },
+  "issue-two/images/julie.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/8cf76c7998cc3a1f-400.webp",
+        "width": 400,
+        "height": 266,
+        "bytes": 15342
+      },
+      {
+        "src": "assets/optimized/8cf76c7998cc3a1f-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 61954
+      },
+      {
+        "src": "assets/optimized/8cf76c7998cc3a1f-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 119918
+      }
+    ],
+    "originalBytes": 545971,
+    "animated": false
+  },
+  "issue-two/images/designstudio.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/4ae39f99574f412f-400.webp",
+        "width": 400,
+        "height": 160,
+        "bytes": 5774
+      },
+      {
+        "src": "assets/optimized/4ae39f99574f412f-800.webp",
+        "width": 800,
+        "height": 320,
+        "bytes": 20852
+      },
+      {
+        "src": "assets/optimized/4ae39f99574f412f-1200.webp",
+        "width": 1200,
+        "height": 480,
+        "bytes": 44132
+      }
+    ],
+    "originalBytes": 235212,
+    "animated": false
+  },
+  "issue-two/images/dropbox.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/542e4fe3d366cb5f-400.webp",
+        "width": 400,
+        "height": 200,
+        "bytes": 6392
+      },
+      {
+        "src": "assets/optimized/542e4fe3d366cb5f-800.webp",
+        "width": 800,
+        "height": 400,
+        "bytes": 14232
+      },
+      {
+        "src": "assets/optimized/542e4fe3d366cb5f-1200.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 23068
+      }
+    ],
+    "originalBytes": 121818,
+    "animated": false
+  },
+  "issue-two/images/instagram.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/6a2f67feadb65d7b-400.webp",
+        "width": 400,
+        "height": 175,
+        "bytes": 3104
+      },
+      {
+        "src": "assets/optimized/6a2f67feadb65d7b-800.webp",
+        "width": 800,
+        "height": 349,
+        "bytes": 6442
+      },
+      {
+        "src": "assets/optimized/6a2f67feadb65d7b-1200.webp",
+        "width": 1200,
+        "height": 524,
+        "bytes": 10110
+      }
+    ],
+    "originalBytes": 63593,
+    "animated": false
+  },
+  "issue-two/images/mcdonalds.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/62d18ca2d65fab3f-400.webp",
+        "width": 400,
+        "height": 266,
+        "bytes": 21204
+      },
+      {
+        "src": "assets/optimized/62d18ca2d65fab3f-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 59738
+      },
+      {
+        "src": "assets/optimized/62d18ca2d65fab3f-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 104568
+      }
+    ],
+    "originalBytes": 355712,
+    "animated": false
+  },
+  "issue-two/images/airbnb.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/3d5e7f45ff27ae41-400.webp",
+        "width": 400,
+        "height": 175,
+        "bytes": 3598
+      },
+      {
+        "src": "assets/optimized/3d5e7f45ff27ae41-800.webp",
+        "width": 800,
+        "height": 350,
+        "bytes": 7082
+      },
+      {
+        "src": "assets/optimized/3d5e7f45ff27ae41-1200.webp",
+        "width": 1200,
+        "height": 525,
+        "bytes": 10688
+      }
+    ],
+    "originalBytes": 55690,
+    "animated": false
+  },
+  "issue-two/images/GIF3.gif": {
+    "variants": [
+      {
+        "src": "assets/optimized/24417330fe243dfa-400.webp",
+        "width": 400,
+        "height": 602,
+        "bytes": 17148
+      },
+      {
+        "src": "assets/optimized/24417330fe243dfa-665.webp",
+        "width": 665,
+        "height": 1000,
+        "bytes": 62304
+      }
+    ],
+    "originalBytes": 3563231,
+    "animated": true,
+    "originalSrc": "issue-two/images/GIF3.gif",
+    "posterFrame": 3
+  },
+  "issue-two/images/type.jpg": {
+    "variants": [
+      {
+        "src": "assets/optimized/cc126ffd9a15c9d7-400.webp",
+        "width": 400,
+        "height": 210,
+        "bytes": 11790
+      },
+      {
+        "src": "assets/optimized/cc126ffd9a15c9d7-800.webp",
+        "width": 800,
+        "height": 420,
+        "bytes": 29532
+      },
+      {
+        "src": "assets/optimized/cc126ffd9a15c9d7-1100.webp",
+        "width": 1100,
+        "height": 578,
+        "bytes": 44232
+      }
+    ],
+    "originalBytes": 225992,
+    "animated": false
+  },
+  "issue-two/images/asset0.jpeg": {
+    "variants": [
+      {
+        "src": "assets/optimized/69c72f83d948fbdc-400.webp",
+        "width": 400,
+        "height": 267,
+        "bytes": 2604
+      },
+      {
+        "src": "assets/optimized/69c72f83d948fbdc-800.webp",
+        "width": 800,
+        "height": 534,
+        "bytes": 6490
+      },
+      {
+        "src": "assets/optimized/69c72f83d948fbdc-1000.webp",
+        "width": 1000,
+        "height": 667,
+        "bytes": 9396
+      }
+    ],
+    "originalBytes": 32205,
+    "animated": false
+  },
+  "assets/images/verycool.png": {
+    "variants": [
+      {
+        "src": "assets/optimized/b09e96d755633d64-168.webp",
+        "width": 168,
+        "height": 170,
+        "bytes": 5486
+      }
+    ],
+    "originalBytes": 17242,
+    "animated": false,
+    "originalSrc": "assets/images/verycool.png"
+  }
+}

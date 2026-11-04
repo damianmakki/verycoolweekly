@@ -1,0 +1,15 @@
+{
+  "name": "Very Cool Weekly",
+  "url": "https://ruckuslabs.co/verycoolweekly/",
+  "description": "Good things for people who make things. An independent collection of design, development, tools, and ideas, curated by Damian Makki.",
+  "author": {
+    "name": "Damian Makki",
+    "url": "https://ruckuslabs.co/"
+  },
+  "subscription": {
+    "enabled": true,
+    "provider": "substack",
+    "publicationUrl": "https://verycoolweekly.substack.com/"
+  },
+  "sponsorContact": "https://ruckuslabs.co/#contact"
+}

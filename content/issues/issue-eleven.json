@@ -1,0 +1,75 @@
+{
+  "number": 11,
+  "slug": "issue-eleven",
+  "title": "Issue Eleven",
+  "date": "2017-06-30",
+  "status": "published",
+  "archived": true,
+  "description": "Issue Eleven: The Nintendo Switch UI; The Terrible UI of Financial Services; Loathing iOS 11's App Switcher. Design and development picks from 2017.",
+  "hero": {
+    "src": "assets/images/issue-eleven-hero.jpg",
+    "alt": "Very Cool Weekly Issue Eleven"
+  },
+  "introHtml": "<p>Welcome to Issue Eleven of Very Cool Weekly.<br>\n<br>\nThis week: a deep look at the Nintendo Switch UI, a great comment thread about the state of UI in the financial services sector, a <em>heavy</em> critique of iOS 11, a great case study about an interesting art concept, some great UI illustration curation, and some new tools from Facebook Design.\n<br>\n<br>\nIf you're enjoying what you're reading, please consider <a href=\"http://twitter.com/home?status=I read @verycoolweekly and I think you should too! It's a weekly newsletter for designers and developers! Signup at makki.pro/verycoolweekly\">sharing @verycoolweekly on Twitter</a>. It really goes a long way!</p>",
+  "items": [
+    {
+      "title": "The Nintendo Switch UI",
+      "url": "https://medium.freecodecamp.org/thoughts-on-the-nintendo-switch-user-interface-b441129f063d",
+      "source": "via freeCodeCamp",
+      "bodyHtml": "<p>Over the last few console generations, Nintendo has made some questionable choices with the UI on the gaming systems. The Wii and WiiU systems introduced and then carried on an overly-bubbly interface coupled with some terrible choices with menu organization and flow. Nintendo's newest system, the Switch, has gone in the complete opposite direction and actually has some pretty impressive UI. Charlie takes a great in-depth look at the UI.</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/bc42b8f1-24a6-4ca5-9159-0183b25a9dce.jpg",
+        "alt": "The Nintendo Switch UI"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "The Terrible UI of Financial Services",
+      "url": "https://www.designernews.co/stories/85041-fixing-the-terrible-design-and-usability-of-financial-services",
+      "source": "via Designer News",
+      "bodyHtml": "<p>Who do you know that loves the UX of their online financial services? I, for one, am astonished at how bad a lot of the systems are - especially considering their significant financial backing. I was debating including this in Issue Eleven because it's not exactly an article, but I think the comments address the core of the problem. Jon Myer's comment, in particular is an eye-opening breakdown of the topic.</p>",
+      "kind": "editorial",
+      "imageUnavailable": true
+    },
+    {
+      "title": "Loathing iOS 11's App Switcher",
+      "url": "http://ericasadun.com/2017/06/23/holy-war-why-i-utterly-loathe-the-new-app-switcher-in-ios-11/",
+      "source": "via Erica Sadun",
+      "bodyHtml": "<p>I applaud Apple for the seemingly transformative changes they're making in iOS 11 (and bringing it to millions of devices), but Erica Sadun has some justified qualms with the now multiple (and not exactly intuitive) ways of completing tasks with the updated OS. Read through this with a grain of salt - iOS 11 is still in beta and subject to significant changes before it's public release.</p>",
+      "kind": "editorial",
+      "imageUnavailable": true
+    },
+    {
+      "title": "Electric Objects",
+      "url": "http://www.elirousso.com/",
+      "source": "via Eli Rousso",
+      "bodyHtml": "<p>Damn. This concept is incredible. Eli Rousso presents an awesome case study into Electric Objects - an elegant way to display art in your home. In his case study, though, he breaks down the UI behind the \"remote\"  feature. It's a great read.</p>",
+      "kind": "editorial",
+      "imageUnavailable": true
+    },
+    {
+      "title": "A Curated Portfolio of the Best Illustration UI",
+      "url": "https://www.illustrationui.com/",
+      "source": "via Illustration UI",
+      "bodyHtml": "<p></p>\n<p>Just a great curated collection of the now ubiquitous trend of illustrations in UI (think Dropbox, Facebook, etc) I thought you'd enjoy!</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/736a30d3-ee3d-4cd4-b96d-4bd42b440d16.jpg",
+        "alt": "Illustration UI"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Soundkit from Facebook Design",
+      "url": "http://facebook.design/soundkit",
+      "source": "via Facebook Design",
+      "bodyHtml": "<p>Facebook has released a collection of interaction sounds for your prototypes. Scroll down the page and hover over the links for a preview of the sounds!</p>",
+      "image": {
+        "src": "https://gallery.mailchimp.com/e472bcdf62ed146e42d456be2/images/741210b9-4b8b-4961-9f28-34803bff5b9d.jpg",
+        "alt": "Soundkit from Facebook"
+      },
+      "kind": "editorial"
+    }
+  ],
+  "sponsor": null,
+  "products": []
+}

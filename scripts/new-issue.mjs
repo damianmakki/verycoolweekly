@@ -1,0 +1,15 @@
+import { writeFile, readFile, mkdir } from 'node:fs/promises';
+import { loadIssues } from './lib.mjs';
+const args=process.argv.slice(2);
+const arg=name=>{const n=args.indexOf(name);return n>=0?args[n+1]:undefined;};
+const issues=await loadIssues();
+const number=Math.max(0,...issues.map(i=>i.number))+1;
+const next=new Date();next.setUTCDate(next.getUTCDate()+((5-next.getUTCDay()+7)%7||7));
+const date=arg('--date')||next.toISOString().slice(0,10);
+if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||!Number.isFinite(Date.parse(date))||new Date(date).toISOString().slice(0,10)!==date)throw new Error('Use --date YYYY-MM-DD');
+const slug=`issue-${number}`, file=`content/issues/${slug}.json`;
+const template=JSON.parse(await readFile('content/templates/issue.json','utf8'));
+Object.assign(template,{number,slug,date,title:arg('--title')||`Issue ${number}`});
+await mkdir('content/issues',{recursive:true});
+await writeFile(file,JSON.stringify(template,null,2)+'\n',{flag:'wx'});
+console.log(`Created ${file}. Edit the copy and picks, optimize images, then preview with npm run build -- --drafts. Keep status=draft until reviewed.`);

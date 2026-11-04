@@ -1,0 +1,95 @@
+{
+  "number": 1,
+  "slug": "issue-one",
+  "title": "Issue One",
+  "date": "2017-04-21",
+  "status": "published",
+  "archived": true,
+  "description": "Issue One: Jiwoong Jung’s “Hidden Time” Watch Is a Minimalist Magic Act By the Hour; Unsplash Concept; adidas Climazone. Design and development picks from 2017.",
+  "hero": {
+    "src": "assets/images/issue-one-hero.jpg",
+    "alt": "Very Cool Weekly Issue One"
+  },
+  "introHtml": "<p>Welcome to the very first issue of Very Cool. I first wanted to thank you a ton for signing up. It means a lot to me. Also, it's very cool of you.</p>\n<p>So what is Very Cool, anyway? Well, it's a weekly newsletter (published every Friday) for designers and developers curated by me, <a href=\"https://www.twitter.com/damianmakki\">Damian Makki</a>. I'm a designer, a pseudo-developer, and I run an agency called <a href=\"https://sammich.shop\">Sammich Shop</a>. A huge portion of my day is spent browsing the internet and I regularly come across some very cool stuff. UI concepts, visual designs, illustrations, icons, design and development articles - stuff like that. Very Cool is a weekly curation of some of the (very) cool stuff I find from talented people all over the world.</p>\n<p>I hope you enjoy the stuff that shows up here every week. It may be stuff you missed during your week on the internet! If you have any feedback or suggestions, I'm <a href=\"https://www.twitter.com/verycoolweekly\">eager to hear from you</a>!</p>",
+  "items": [
+    {
+      "title": "Jiwoong Jung’s “Hidden Time” Watch Is a Minimalist Magic Act By the Hour",
+      "url": "http://design-milk.com/jiwoong-jung-hidden-time-watch/",
+      "source": "via Design Milk",
+      "bodyHtml": "<p>Oh man. If you know me, you know my love of watches. Maybe love is an understatement. More like obsession. Anyway, I've found my next drool-worthy timepiece.</p>",
+      "image": {
+        "src": "issue-one/images/watches.jpg",
+        "alt": "Jiwoong Jung’s “Hidden Time” Watch Is a Minimalist Magic Act By the Hour"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Unsplash Concept",
+      "url": "https://dribbble.com/shots/3379844-Unsplash-Photo-App-Concept-Daily-Challenge-2-Free-prd-2",
+      "source": "by Yaan on Dribbble",
+      "bodyHtml": "<p>Who doesn't love <a href=\"https://www.unsplash.com\">Unsplash</a>? They've recently done a great job redesigning their web experience, but Yaan explores a mobile-focused experience. Bonus: Yaan included the Principle file he used to create the concept!</p>",
+      "image": {
+        "src": "issue-one/images/unsplash.gif",
+        "alt": "Unsplash Concept"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "adidas Climazone",
+      "url": "https://land-book.com/websites/3431-adidas-climazone",
+      "source": "via Land Book",
+      "bodyHtml": "<p>An absolutely stunning microsite from Adidas for their Climazone line. It's not often you see a design so well-translated to the web.</p>",
+      "image": {
+        "src": "issue-one/images/climazone.jpg",
+        "alt": "adidas Climazone"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Happy Hour",
+      "url": "http://eyeondesign.aiga.org/happy-hour-7/",
+      "source": "via Eye on Design",
+      "bodyHtml": "<p>What's better than a cold beer or a smooth wine? A beautifully packaged cold beer or smooth wine. Click through to check out some really impressive boozy can and bottle designs.</p>",
+      "image": {
+        "src": "issue-one/images/beer.jpg",
+        "alt": "Happy Hour"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Cylinda-line Celebrates Its 50th Anniversary With New Ocean-Inspired Colors",
+      "url": "http://design-milk.com/cylinda-line-celebrates-its-50th-anniversary-with-new-ocean-inspired-colors/?utm_source=feedly&utm_medium=webfeeds",
+      "source": "via Design Milk",
+      "bodyHtml": "<p>Despite being originally released 50 years ago, the Cylinda-line still looks damn good.</p>",
+      "image": {
+        "src": "issue-one/images/cylinda-line.jpg",
+        "alt": "Cylinda-line Celebrates Its 50th Anniversary With New Ocean-Inspired Colors"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Kendrick Lamar – DAMN. album cover",
+      "url": "https://fontsinuse.com/uses/16623/kendrick-lamar-damn-album-cover",
+      "source": "via FontsInUse",
+      "bodyHtml": "<p>There's not much to critique when it comes to kdot's new album, <em>DAMN.</em> That didn't keep FontsInUse from going some serious depth about the album cover and the blaring issues with it. An interesting read for typography nerds.</p>",
+      "image": {
+        "src": "issue-one/images/kdotjpeg.jpeg",
+        "alt": "Kendrick Lamar – DAMN. album cover"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "CSS Peeper",
+      "url": "https://chrome.google.com/webstore/detail/css-peeper/mbnbehikldjhnfehhnaidhjhoofhpehk",
+      "source": "via the Chrome Webstore",
+      "bodyHtml": "<p>I'm not one to install superfluous extensions, but CSS Peeper has plesantly surprised me with it's ability to parse HTML/CSS and pull colors, assets, and other metadata. This makes it so much easier to nab SVG logos for those extracurricular projects....</p>",
+      "image": {
+        "src": "issue-one/images/csspeeper.jpg",
+        "alt": "CSS Peeper"
+      },
+      "kind": "editorial"
+    }
+  ],
+  "sponsor": null,
+  "products": []
+}

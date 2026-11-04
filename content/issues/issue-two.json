@@ -1,0 +1,139 @@
+{
+  "number": 2,
+  "slug": "issue-two",
+  "title": "Issue Two",
+  "date": "2017-04-28",
+  "status": "published",
+  "archived": true,
+  "description": "Issue Two: Bengt Brummers' Monochromatic Tumblr; Griselda Martí's \"Real Stories\"; Julie Zhuo's \"When Design Feels Like an Uphill Battle\". Design and development…",
+  "hero": {
+    "src": "assets/images/issue-two-hero.jpg",
+    "alt": "Very Cool Weekly Issue Two"
+  },
+  "introHtml": "<p>Welcome to Issue Two of Very Cool. There are a lot of great long-form reads this week including one from one of my favorite writers, <a href=\"https://twitter.com/joulee\">Julie Zhuo.</a></p>\n<p>Like what you're reading? Share it with people you think would find it interesting, too! I'd also love to hear from you on Twitter <a href=\"https://twitter.com/verycoolweekly\">@verycoolweekly</a>.</p>\n<p>Have a great weekend!</p>",
+  "items": [
+    {
+      "title": "Bengt Brummers' Monochromatic Tumblr",
+      "url": "http://benbentobox.tumblr.com/",
+      "source": "via BenBentoBox",
+      "bodyHtml": "<p>Bengt Brummers' Monochromatic Tumblr Tumblr caught my eye this week - but not for the reason you'd expect. Check out his Tumblr and try searching for a color: say <a href=\"http://benbentobox.tumblr.com/search/yellow\">black</a> or <a href=\"http://benbentobox.tumblr.com/search/yellow\">yellow</a>. Bengt's Tumblr will return a ton of his curated images that relate to your search - in an impressive monochromatic visual assault. He says it works with themes, but I could only get it to work with colors.</p>",
+      "image": {
+        "src": "issue-two/images/bentobox.jpg",
+        "alt": "Bengt Brummers' Monochromatic Tumblr"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Griselda Martí's \"Real Stories\"",
+      "url": "https://www.behance.net/gallery/30154893/Real-Stories",
+      "source": "via Behance",
+      "bodyHtml": "<p>I'm a sucker for anything neon-themed. Pair it with a corporate identity case study and I'm in heaven. Griselda's \"Real Stories\" pairs stark typography with a simple design streak - literally. I'm intrigued by the human-element of the hand-drawn streak.</p>",
+      "image": {
+        "src": "issue-two/images/behance.jpg",
+        "alt": "Griselda Martí's \"Real Stories\""
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Julie Zhuo's \"When Design Feels Like an Uphill Battle\"",
+      "url": "https://medium.com/the-year-of-the-looking-glass/when-design-feels-like-an-uphill-battle-7dde15ac36bb",
+      "source": "via Medium",
+      "bodyHtml": "<p>Whenever I read one of Julie's essays, I come away feeling inspired and more knowledgeable. This one particularly struck a chord with me as it covers something I've always strugged with - it's not always easy working with people who don't fully understand (or appreciate) the value of design - Julie outlines some ways of conquering that hill.</p>",
+      "image": {
+        "src": "issue-two/images/julie.jpg",
+        "alt": "Julie Zhuo's \"When Design Feels Like an Uphill Battle\""
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Mike Monteiro's \"Lessons we accidentally learned while running a design shop\"",
+      "url": "https://deardesignstudent.com/lessons-we-accidentally-learned-while-running-a-design-shop-f58a9c389bf4",
+      "source": "via Medium",
+      "bodyHtml": "<p>Too real. Look, <a href=\"https://sammich.shop/\">Sammich Shop</a> is less than a year old, but a lot of what Mike talks about in this article is stuff <a href=\"https://twitter.com/joetannenbaum\">@joetannenbaum</a> and I are dealing with right now. It's always good to know you're not the only one going through the tough stuff....</p>",
+      "image": {
+        "src": "issue-two/images/designstudio.jpg",
+        "alt": "Mike Monteiro's \"Lessons we accidentally learned while running a design shop\""
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "\"Influencing redesign\" by Ed Chao",
+      "url": "https://medium.com/dropbox-design/influencing-redes-85844706fbe4",
+      "source": "via Medium",
+      "bodyHtml": "<p>I love Dropbox. I use it every single day. Most of the time, though, I'm using it straight through MacOS. When I finally logged into the web app a few weeks ago, I was super impressed with the redesign. Ed Chao, a designer at Dropbox, talks not only about the design process, but the impact a small team of passionate individuals can have on a larger organization.</p>",
+      "image": {
+        "src": "issue-two/images/dropbox.jpg",
+        "alt": "\"Influencing redesign\" by Ed Chao"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "My open source Instagram bot got me 2,500 real followers for $5 in server costs",
+      "url": "https://medium.freecodecamp.com/my-open-source-instagram-bot-got-me-2-500-real-followers-for-5-in-server-costs-e40491358340",
+      "source": "via the Chrome Webstore",
+      "bodyHtml": "<p>I know plenty of people who'd kill to get more Instagram followers. You'll probably get banned for using Tim's open source Instagram bot, but the development behind the product is pretty interesting.</p>",
+      "image": {
+        "src": "issue-two/images/instagram.jpg",
+        "alt": "My open source Instagram bot got me 2,500 real followers for $5 in server costs"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "McDonald's New Uniforms",
+      "url": "https://hypebeast.com/2017/4/mcdonalds-new-uniforms-waraire-boswell",
+      "source": "via Hypebeast",
+      "bodyHtml": "<p>You know it. I know it. It's shameful, but every once in awhile a Big Mac really hits the spot. McDonald's is launching some pretty fresh (if fairly dystopian-looking) new uniforms. There's a lot of talk about how comfortable they're designed to be, but let's face it - black is very cool.</p>",
+      "image": {
+        "src": "issue-two/images/mcdonalds.jpg",
+        "alt": "McDonald's New Uniforms"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Painting with Code",
+      "url": "http://airbnb.design/painting-with-code/",
+      "source": "via Hypebeast",
+      "bodyHtml": "<p>Airbnb is an outstanding leader in design. When I came across this article this week, I was blown away by the enginnering that's gone into a new tool that's \"built to help bridge the gap between designers and engineers working on design systems at scale.\" It bridges a gap (I didn't know existed) between Sketch.app and React. Definitely looking forward to playing around with this.</p>",
+      "image": {
+        "src": "issue-two/images/airbnb.jpg",
+        "alt": "Painting with Code"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "22 Skinny Houses With a Narrow Footprint and a Broad Impact",
+      "url": "http://www.archdaily.com/869475/22-skinny-houses-with-a-narrow-footprint-and-a-broad-impact",
+      "source": "via Arch Daily",
+      "bodyHtml": "<p>Everyone knows about tiny houses, but how about skinny houses? Lust after these 22 gorgeous pieces of architecture courtesy of Arch Daily.</p>",
+      "image": {
+        "src": "issue-two/images/GIF3.gif",
+        "alt": "22 Skinny Houses With a Narrow Footprint and a Broad Impact"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "A Pan-Asian Font Designed for 1.5 Billion People",
+      "url": "http://eyeondesign.aiga.org/a-pan-asian-font-designed-for-1-5-billion-people-is-this-google-adobes-most-ambitious-type-project-yet/",
+      "source": "via Eye on Design",
+      "bodyHtml": "<p>Designing fonts is hard. Add the pressure of designing one font for 1.5 billion people? Even harder. Not a problem for Google and Adobe, though. Source Han Serif is a new open source typeface that harmonizes the look of the characters across Chinese, Japanese, and Korean alphabets so designers can gracefully mix and blend designs from different countries.</p>",
+      "image": {
+        "src": "issue-two/images/type.jpg",
+        "alt": "A Pan-Asian Font Designed for 1.5 Billion People"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "The fight for net neutrality isn’t over",
+      "url": "https://theoutline.com/post/1437/the-fight-for-net-neutrality-isn-t-over",
+      "source": "via The Outline",
+      "bodyHtml": "<p>Maybe a bit serious to end this week on, but important read from The Outline nonetheless. \"The threat that we’re now facing is one of the most significant that we have faced in 10 years...\" is definitely not an understatement.</p>",
+      "image": {
+        "src": "issue-two/images/asset0.jpeg",
+        "alt": "The fight for net neutrality isn’t over"
+      },
+      "kind": "editorial"
+    }
+  ],
+  "sponsor": null,
+  "products": []
+}

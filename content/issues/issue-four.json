@@ -1,0 +1,95 @@
+{
+  "number": 4,
+  "slug": "issue-four",
+  "title": "Issue Four",
+  "date": "2017-05-12",
+  "status": "published",
+  "archived": true,
+  "description": "Issue Four: Behind Vox Media's Newspaper-Inspired Homepage Redesign; Opulence on Rails; OKCupid's Terrible New App Icon. Design and development picks from 2017.",
+  "hero": {
+    "src": "assets/images/issue-four-hero.jpg",
+    "alt": "Very Cool Weekly Issue Four"
+  },
+  "introHtml": "<p>While there are some great articles in the Issue this week, I feel like the \"You Can Learn Anything\" resource at the end deserves some extra attention. While the concept is stellar, I want to strongly suggest that you spend some time with it! Just tapping through the \"design\" maps, I found some pretty cool resources that I'd never seen before. Who knows? You could stumble upon something you want to learn.<br><br>Have a great weekend!</p>",
+  "items": [
+    {
+      "title": "Behind Vox Media's Newspaper-Inspired Homepage Redesign",
+      "url": "https://product.voxmedia.com/2017/4/6/15182844/behind-vox-homepage-refresh/",
+      "source": "via Vox Media",
+      "bodyHtml": "<p>Vox Media is the parent company of some of my favorite sites including The Verge, Polygon, and Recode. They've got some really great design chops and their transparency behind their recent homepage refresh is pretty interesting. It's always insightful to take a peek behind the curtain and see how many iterations and versions is takes to reach the final product.</p>",
+      "image": {
+        "src": "issue-four/images/vox.jpg",
+        "alt": "Behind Vox Media's Newspaper-Inspired Homepage Redesign"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Opulence on Rails",
+      "url": "http://luxurylaunches.com/travel/inside-japans-newest-luxury-train-which-is-like-the-burj-al-arab-on-wheels.php?utm_source=coolmaterial.com&utm_medium=referral&utm_campaign=pubexchange",
+      "source": "via Luxury Launches",
+      "bodyHtml": "<p>So everyone's talking about the Hyperloop, but let's take a step back and think about what's really important while riding a train. Baths. Check. Personal observatory decks. Check. Thank goodness for Japan's Shiki-Shima luxury sleeper. Who's in for splitting a ticket with me?</p>",
+      "image": {
+        "src": "issue-four/images/train.jpg",
+        "alt": "Opulence on Rails"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "OKCupid's Terrible New App Icon",
+      "url": "https://theoutline.com/post/1502/okcupid-s-new-app-icon-is-bad-just-like-dating",
+      "source": "via The Outline",
+      "bodyHtml": "<p>OKCupid had the right idea going into their recent app icon redesign. It was supposed to represent the \"chaos\" and \"mess\" that is dating. Their execution was pitiful, though, and the ultimate product was just a mess.</p>",
+      "image": {
+        "src": "issue-four/images/okc.jpg",
+        "alt": "OKCupid's Terrible New App Icon"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "A Trio of Beautiful Limited Edition tokyobike Bikes",
+      "url": "http://design-milk.com/tokyobike-launches-series-of-limited-edition-designer-bicycles/",
+      "source": "via Design Milk",
+      "bodyHtml": "<p>tokyobike is synonymous with beautiful, clean bikes. Three new limited-edition bikes from Calico Wallpaper, Everything Elevated, and Joe Doucet are my new lust-worthy obsession. My favorite? The white/gray split for sure.</p>",
+      "image": {
+        "src": "issue-four/images/tokyobike.jpg",
+        "alt": "A Trio of Beautiful Limited Edition tokyobike Bikes"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Fluent Design from Microsoft",
+      "url": "http://fluent.microsoft.com/",
+      "source": "via Microsoft",
+      "bodyHtml": "<p>Fluent Design is Microsoft's answer to Google's Material Design language. The entire intent is to make it easier for designer and developers write more \"delightful\" applications that work well across all your different devices.</p>",
+      "image": {
+        "src": "issue-four/images/fluent.gif",
+        "alt": "Fluent Design from Microsoft"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "Awesome Design",
+      "url": "https://github.com/gztchan/awesome-design",
+      "source": "via GitHub",
+      "bodyHtml": "<p>Is it too meta to curate a curated design list? Probably, but that won't stop me from sharing Tony Chan's Awesome Design GitHub repo where he collects high quality resources and tools for UI &amp; UX designers. Take a look through - I've found some new resources you'll probably find in future Issues.</p>",
+      "image": {
+        "src": "issue-four/images/design.jpg",
+        "alt": "Awesome Design"
+      },
+      "kind": "editorial"
+    },
+    {
+      "title": "You Can Learn Anything",
+      "url": "https://github.com/nikitavoloboev/knowledge-map",
+      "source": "via MindNode",
+      "bodyHtml": "<p>There's a reason I saved this link for last this week. I stumbled upon this on Hacker News this week and quickly got lost down a rabbit hole checking out the design bubble. With over 3000 links, I'm sure you'll find something to learn.<br><br>Interested in more? You can check out the <a href=\"https://github.com/nikitavoloboev/knowledge-map\">GitHub repo</a> for WAY more info about the project.</p>",
+      "image": {
+        "src": "issue-four/images/mindmap.jpg",
+        "alt": "You Can Learn Anything"
+      },
+      "kind": "editorial"
+    }
+  ],
+  "sponsor": null,
+  "products": []
+}

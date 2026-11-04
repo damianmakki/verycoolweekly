@@ -1,0 +1,67 @@
+{
+  "number": 12,
+  "slug": "issue-12",
+  "date": "2026-11-13",
+  "status": "scheduled",
+  "archived": false,
+  "title": "Issue 12",
+  "description": "sndstation turns gaming handhelds toward music-making; Super-Veloz: a type system you can build with; Jakob Vasak built the instrument he could hear in his head",
+  "hero": {
+    "src": "assets/images/verycool.png",
+    "alt": "Very Cool Weekly"
+  },
+  "introHtml": "<p>Here are this week’s design and development picks.</p>",
+  "items": [
+    {
+      "kind": "editorial",
+      "title": "sndstation turns gaming handhelds toward music-making",
+      "url": "https://cdm.link/sndstation-linux-distro-for-game-handhelds/",
+      "source": "CDM",
+      "bodyHtml": "<p>A cheap gaming handheld that makes noises instead of playing games? Yes, please. Peter Kirn looks at sndstation, an early Linux music project for these little machines. Nothing to download yet, so this is one to watch rather than a weekend install. The buttons are already there. Give them something else to do.</p>",
+      "xText": "Cheap gaming handhelds, repurposed for music. @cdmblogs looks at sndstation, an early Linux project with nothing to download yet. The buttons are already there. Give them something else to do."
+    },
+    {
+      "kind": "editorial",
+      "title": "Super-Veloz: a type system you can build with",
+      "url": "https://letterformarchive.org/news/super-veloz-q-and-a/",
+      "source": "Letterform Archive",
+      "bodyHtml": "<p>A box of shapes that can turn into letters, pictures, or whatever else you manage to make out of it. Letterform Archive talks with Alex Trochut and Andreu Balius about Super-Veloz, Joan Trochut's modular type system from the 1940s. There's a browser composer, too. A very good reason to lose track of an afternoon.</p>",
+      "xText": "A box of shapes that can become letters or pictures. Letterform Archive talks with Alex Trochut and Andreu Balius about Super-Veloz, with a browser composer to explore."
+    },
+    {
+      "kind": "editorial",
+      "title": "Jakob Vasak built the instrument he could hear in his head",
+      "url": "https://15questions.net/interview/jakob-vasak-about-the-kobophon-and-recognising-the-strangely-familiar/page-1/",
+      "source": "Fifteen Questions",
+      "bodyHtml": "<p>Jakob Vasak spent years trying to get a particular sound out of recordings and effects. Eventually he built an instrument that makes it. The Kobophon uses strings, a wooden body and a feedback loop to arrive somewhere strangely familiar. This Fifteen Questions interview is a nice rabbit hole about chasing a sound you can't quite explain.</p>",
+      "xText": "Jakob Vasak spent years chasing a sound, then built the Kobophon to make it. Strings, wood and a feedback loop. A Fifteen Questions interview about an unusually specific creative obsession."
+    },
+    {
+      "kind": "editorial",
+      "title": "Modern CSS Might Make Your Front-End More Complex",
+      "url": "https://www.smashingmagazine.com/2026/11/modern-css-might-make-your-front-end-more-complex/",
+      "source": "Smashing Magazine",
+      "bodyHtml": "<p>I'm all for getting rid of JavaScript we don't need. But moving a problem into CSS doesn't automatically make it disappear. Gabriel Shoyombo takes a look at what happens when the two end up sharing responsibility for the same behavior. Worth a read before declaring that smaller file a victory.</p>",
+      "xText": "A smaller diff doesn’t always mean a simpler interface. @theDocWhoCodes digs into what happens when CSS and JavaScript share responsibility for layout in @smashingmag. #CSS"
+    },
+    {
+      "kind": "editorial",
+      "title": "Accordion Icons: Which Work Best?",
+      "url": "https://www.smashingmagazine.com/2026/10/accordion-icons-which-work-best/",
+      "source": "Smashing Magazine",
+      "bodyHtml": "<p>How much thought should go into the little icon next to an accordion? Apparently, a little more than you'd think. Vitaly Friedman breaks down which choices create confusion, especially when the label takes you somewhere and the icon does something else. Personally, I don't think opening a menu should require that much guesswork.</p>",
+      "xText": "Vitaly Friedman’s piece in @smashingmag looks at accordion icons and split menus. The small interaction details matter more than an elaborate icon treatment. #UX"
+    },
+    {
+      "kind": "editorial",
+      "title": "What makes a great poster? Highlights from INTL 2026",
+      "url": "https://www.itsnicethat.com/features/intl-poster-competition-graphic-design-spotlight-021126",
+      "source": "It’s Nice That / Jenny Brewer",
+      "bodyHtml": "<p>Sometimes you just need to look at a bunch of really good posters. This year's INTL selection has plenty of texture, strange typography, and work that doesn't seem particularly interested in behaving itself. James Gilchrist talks through what's changing in poster design, but honestly, the work alone is worth the click.</p>",
+      "xText": "Texture, collaged type and deliberate awkwardness: @itsnicethat looks through INTL’s 2026 poster selection. #Typography"
+    }
+  ],
+  "sponsor": null,
+  "products": [],
+  "publishAt": "2026-11-13T16:00:00.000Z"
+}

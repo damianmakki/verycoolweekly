@@ -508,11 +508,6 @@ main { flex: 1; }
 
 /* A quiet introduction, with the original graphic as its only heading. */
 .splash-page main, .archive-page main { text-align: start; }
-.splash-page, .archive-page { --content-gutter: 32px; }
-.splash-page main > .wrap, .archive-page main > .wrap { margin-inline-start: var(--content-gutter); margin-inline-end: auto; }
-@media (max-width: 800px) {
-  .splash-page, .archive-page { --content-gutter: 20px; }
-}
 .splash { padding-block: 64px 76px; }
 .splash-logo { width: 160px; margin: 0 0 30px; }
 .splash-logo img { width: 100%; height: auto; }

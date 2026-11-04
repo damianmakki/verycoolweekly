@@ -19,7 +19,7 @@ try{
    else if(response.status!==404)throw new Error(`Published index returned HTTP ${response.status}`);
   }catch(error){deployed=undefined;if(args.includes('--strict'))throw error;console.warn(`Using local archive history: ${error.message}`);}
   if(deployed){const combined=new Map([...(previous?.posts||[]),...deployed.posts].map(post=>[post.url,post]));const merged=[...combined.values()];previous={...deployed,posts:merged,feedHash:postsHash(merged)};}
-  const response=await fetch(feedUrl,{signal:AbortSignal.timeout(20000),headers:{Accept:'application/rss+xml,application/xml'}});if(!response.ok)throw new Error(`Substack feed returned HTTP ${response.status}`);xml=await response.text();if(xml.length>10*1024*1024)throw new Error('Substack feed exceeded the size limit');
+  const response=await fetch(feedUrl,{signal:AbortSignal.timeout(20000),headers:{Accept:'application/rss+xml,application/xml;q=0.9','User-Agent':`VeryCoolWeekly/1.0 (+${site.url})`}});if(!response.ok)throw new Error(`Substack feed returned HTTP ${response.status}`);xml=await response.text();if(xml.length>10*1024*1024)throw new Error('Substack feed exceeded the size limit');
  }
  const incoming=parseSubstackFeed(xml,publicationUrl);
  const posts=reconcilePosts(previous?.publicationUrl===publicationUrl?previous.posts:[],incoming);

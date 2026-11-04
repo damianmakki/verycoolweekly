@@ -16,7 +16,20 @@ for(const file of html){
  if(!description||descriptions.has(description))fail('missing or duplicate description');descriptions.add(description);
  const canonical=$('link[rel=canonical]').attr('href');if(!canonical?.startsWith(config.url))fail('wrong canonical');
  if($('script[src]').length)fail('unexpected runtime script');
- $('script[type="application/ld+json"]').each((_,el)=>{try{JSON.parse($(el).text());}catch{fail('invalid structured data');}});
+ const structured=$('script[type="application/ld+json"]');
+ if(structured.length!==1)fail('expected one JSON-LD graph');
+ structured.each((_,el)=>{try{
+  const graph=JSON.parse($(el).text())['@graph'];
+  if(!Array.isArray(graph))throw new Error('missing graph');
+  const page=graph.find(node=>['WebPage','CollectionPage'].includes(node['@type']));
+  if(page?.url!==canonical||page?.name!==title||page?.description!==description)fail('page schema does not match metadata');
+  for(const type of ['Organization','WebSite','Person'])if(!graph.some(node=>node['@type']===type))fail(`missing ${type} identity`);
+  const ids=new Set(graph.map(node=>node['@id']));
+  function references(value){if(!value||typeof value!=='object')return;if(Object.keys(value).length===1&&value['@id']&&!ids.has(value['@id']))fail('unresolved schema identity');for(const child of Object.values(value))references(child);}
+  references(graph);
+ }catch{fail('invalid structured data');}});
+ if($('.subscribe').length!==1)fail('expected the shared newsletter signup');
+ if($('.site-header').length!==1||$('.site-footer').length!==1)fail('missing shared header/footer');
  if($('img:not([alt])').length)fail('images missing alt');
  if($('table:not([role=presentation])').length)fail('email layout tables in web content');
  for(const el of $('a[href],img[src],link[href]').toArray()){

@@ -20,7 +20,8 @@
     "editorial": "node scripts/editorial-cli.mjs",
     "review": "node scripts/review-server.mjs",
     "preferences": "node scripts/preferences-cli.mjs",
-    "sync:substack": "node scripts/sync-substack.mjs"
+    "sync:substack": "node scripts/sync-substack.mjs",
+    "publish:substack": "node scripts/publish-substack-index.mjs"
   },
   "devDependencies": {
     "cheerio": "^1.1.2",

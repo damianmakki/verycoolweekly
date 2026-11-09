@@ -23,11 +23,15 @@ npm run check
 
 A normal build is offline and deterministic from its cached snapshot. A failed local refresh uses the existing snapshot. Deployment uses `sync:substack -- --strict`; a refresh failure stops the build and leaves the current live site untouched. No Substack credentials or unpublished feed endpoints are used.
 
-The root Ruckus workflow checks for Substack changes hourly at minute 17 and skips a scheduled deployment when the normalized public index has not changed. GitHub schedules may run late. A manual website deployment always performs a fresh sync. The newsletter repository's CI validates source changes and builds a preview artifact; it does not send email or publish the root site.
+The Mac checks Substack’s public feed hourly through a Codex automation. Substack blocks GitHub-hosted feed requests with HTTP 403; the public feed works from this Mac. Keep this Mac awake with Codex running for refreshes. GitHub still hosts and builds the website, using the validated public snapshot already committed to the newsletter repository. No paid service or new account connection is required.
+
+The automation clones a clean isolated newsletter checkout, installs dependencies and runs `npm run publish:substack -- --publish`. That command retrieves only the public RSS feed, sanitizes and checks the index, excludes future posts, and compares it with the live website. An unchanged index does nothing. For a change it runs the tests/build/check, commits only `content/substack/posts.json`, pushes without force, and dispatches the existing Ruckus Pages workflow pinned to the exact newsletter commit. It reuses a matching pending deployment rather than dispatching duplicates. Failed refreshes or checks leave the live site unchanged. After dispatch, verify the matching GitHub run and live homepage/archive/feed; dispatch is not deployment success. The source CI validates source changes but does not send email.
+
+Use a fresh checkout for each refresh. The command refuses a dirty checkout, preserving the author’s active desk, private exports and unrelated local work. Omit `--publish` to validate a preview without a commit, push or deployment. After an interrupted process, inspect for a running refresh before removing a stale `vcw-public-substack-refresh.lock` in the system temporary folder.
 
 ## Website delivery
 
-Run `npm run export:ruckus` to rebuild, check, and refresh the sibling website export. Its manifest removes only files managed by the newsletter export. Preserve unrelated Ruckus work. Changes in both repositories must be reviewed and published before the hourly refresh workflow becomes active. Until then, the local preview is the review surface.
+Run `npm run export:ruckus` to rebuild, check, and refresh the sibling website export. Its manifest removes only files managed by the newsletter export. Preserve unrelated Ruckus work. The root workflow accepts an optional `newsletter_ref` for the validated source commit. It builds the cached public index and does not fetch Substack from GitHub. Source changes and workflow changes must pass their checks before enabling the recurring Mac refresh.
 
 The public RSS and JSON Feed keep their existing URLs, contain the full sanitized Substack edition and available images, and retain historical website GUIDs for the original imported editions. New entries use Substack post IDs/URLs. The homepage, archive, feed mirrors, and JSON-LD archive list all share the same published Substack index. Local authoring files cannot leak into these surfaces.
 

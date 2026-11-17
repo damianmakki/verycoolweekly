@@ -2,12 +2,11 @@
   "account": "verycoolweekly",
   "timeZone": "America/Denver",
   "articleTimes": [
-    "09:30",
-    "14:30"
+    "09:30"
   ],
   "roundupTime": "10:00",
   "delivery": "export-only",
-  "articleStartDay": "tuesday",
+  "articleStartDay": "monday",
   "publishingProvider": "buffer-free",
   "allowPaidServices": false,
   "buffer": {
@@ -16,5 +15,52 @@
     "account": "verycoolweekly",
     "verifiedAt": "2026-11-03",
     "plan": "free"
+  },
+  "articleCadence": "weekday-daily",
+  "noteCadence": "match-articles",
+  "editionTime": "09:45",
+  "editionOverrides": {
+    "2026-11-13": {
+      "articleCadence": null,
+      "articleStartDay": "tuesday",
+      "articleTimes": [
+        "09:30",
+        "14:30"
+      ],
+      "editionTime": "10:11",
+      "roundupTime": "10:30"
+    },
+    "2026-11-20": {
+      "articleSlots": [
+        {
+          "daysBeforeFriday": 4,
+          "time": "09:30"
+        },
+        {
+          "daysBeforeFriday": 3,
+          "time": "09:30"
+        },
+        {
+          "daysBeforeFriday": 2,
+          "time": "09:30"
+        },
+        {
+          "daysBeforeFriday": 2,
+          "time": "14:30"
+        },
+        {
+          "daysBeforeFriday": 1,
+          "time": "09:30"
+        },
+        {
+          "daysBeforeFriday": 0,
+          "time": "09:30"
+        }
+      ]
+    }
+  },
+  "noteFooter": {
+    "text": "Subscribe / follow along at Very Cool Weekly:",
+    "url": "https://verycoolweekly.substack.com/"
   }
 }

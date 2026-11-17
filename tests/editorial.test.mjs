@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { reviewCandidate, applyEditingNote, approvedCandidates, buildHopper, copyHash } from '../scripts/editorial.mjs';
-const candidate={id:'test-pick',title:'A useful article',url:'https://example.org/article',source:'Original author',checkedAt:'2026-11-03',summary:'A specific article.',whyItFits:'Useful to designers.',copy:{bodyHtml:'<p>A useful explanation.</p>',xText:'A useful idea.',noteText:'A useful idea, with context.'},decision:'pending',notesApplied:false,approvedHash:null};
+import { reviewCandidate, applyEditingNote, approvedCandidates, buildHopper, copyHash, reviewPreview, validateBatch } from '../scripts/editorial.mjs';
+const candidate={id:'test-pick',title:'A useful article',url:'https://example.org/article',source:'Original author',checkedAt:'2026-11-03',summary:'A specific article.',whyItFits:'Useful to designers.',copy:{buttonLabel:'Explore the Project',bodyHtml:'<p>A useful explanation.</p>',xText:'A useful idea.',noteText:'A useful idea, with context.'},decision:'pending',notesApplied:false,approvedHash:null};
 const batch={date:'2026-11-13',issueSlug:'issue-12',issueNumber:12,candidates:[candidate]};
 const config={account:'verycoolweekly',timeZone:'America/Denver',articleTimes:['09:30','14:30'],roundupTime:'10:00',delivery:'export-only'};
 const site={url:'https://ruckuslabs.co/verycoolweekly/',author:{name:'Damian Makki'}};
@@ -23,7 +23,24 @@ test('an editing note blocks the pick until applied to all channel copy',()=>{
  const edited=applyEditingNote(approved,{bodyHtml:'<p>Short copy.</p>',xText:'Short copy.',noteText:'Short context.'});
  assert.equal(approvedCandidates({...batch,candidates:[edited]}).length,1);
  assert.equal(edited.editingNote,'Make it shorter.');assert.equal(edited.history.at(-1).action,'editing-note-applied');
+ assert.equal(edited.copy.buttonLabel,candidate.copy.buttonLabel);
  assert.throws(()=>applyEditingNote(candidate,edited.copy),/No approved editing note/);
+});
+
+test('reviewed button labels survive exports and changes require approval again',()=>{
+ const pick=structuredClone(candidate);pick.copy.buttonLabel='Explore A & B';
+ const approved=reviewCandidate(pick,{decision:'approved'});
+ const result=buildHopper({...batch,candidates:[approved]},config,site,{now});
+ assert.equal(result.issue.items[0].buttonLabel,pick.copy.buttonLabel);
+ assert.deepEqual(result.manifest.roundupButtons,[{candidateId:pick.id,label:pick.copy.buttonLabel,url:pick.url}]);
+ assert.match(result.postHtml,/Explore A &amp; B/);
+ assert.match(result.emailHtml,/Explore A &amp; B/);
+ assert.ok(reviewPreview({...batch,candidates:[approved]}).includes('Roundup button: Explore A & B'));
+ const edited=structuredClone(approved);edited.copy.buttonLabel='Open the Project';
+ assert.deepEqual(approvedCandidates({...batch,candidates:[edited]}),[]);
+ const legacy=structuredClone(candidate);delete legacy.copy.buttonLabel;
+ assert.deepEqual(validateBatch({...batch,candidates:[legacy]}),[]);
+ assert.throws(()=>buildHopper({...batch,candidates:[reviewCandidate(legacy,{decision:'approved'})]},config,site,{now}),/Review a roundup button label/);
 });
 test('hopper contains only approved picks and produces all requested channel formats',()=>{
  const approved=reviewCandidate(candidate,{decision:'approved'});
@@ -87,4 +104,29 @@ test('Substack-first drafts do not require a website issue and X roundups wait f
  assert.equal(new URL(roundup.url).pathname,'/p/actual-post-slug');
  assert.equal(roundup.requiresPublishedSubstackPost,true);assert.equal(roundup.missingSubstackUrl,false);
  assert.throws(()=>buildHopper({...batch,candidates:[approved],substackPostUrl:'https://example.org/wrong-post'},config,substackSite,{now}),/actual Substack post URL/);
+});
+
+test('daily Notes match all five X picks and the Friday edition follows the final article',()=>{
+ const picks=Array.from({length:5},(_,n)=>reviewCandidate({...candidate,id:`pick-${n}`,url:`https://example.org/${n}`},{decision:'approved'}));
+ const c={...config,articleCadence:'weekday-daily',articleStartDay:'monday',articleTimes:['09:30'],noteCadence:'match-articles',editionTime:'09:45'};
+ const result=buildHopper({...batch,candidates:picks},c,site,{now});
+ const articles=result.manifest.jobs.filter(j=>j.channel==='x'&&j.kind==='article');
+ assert.equal(result.notes.length,5);
+ assert.deepEqual(result.notes.map(n=>n.candidateId),articles.map(n=>n.candidateId));
+ assert.deepEqual(result.notes.map(n=>n.scheduledAt),articles.map(n=>n.scheduledAt));
+ const edition=result.manifest.jobs.find(j=>j.channel==='substack-edition');
+ const roundup=result.manifest.jobs.find(j=>j.kind==='roundup');
+ assert.ok(edition.scheduledAt>articles.at(-1).scheduledAt&&roundup.scheduledAt>edition.scheduledAt);
+ assert.throws(()=>buildHopper({...batch,candidates:picks},{...c,editionTime:'09:00'},site,{now}),/follow the final daily/);
+});
+
+test('publication footer is included once in Notes only and preserves approved article copy',()=>{
+ const approved=reviewCandidate(candidate,{decision:'approved'});
+ const c={...config,noteFooter:{text:'Subscribe / follow along at Very Cool Weekly:',url:'https://verycoolweekly.substack.com/'}};
+ const result=buildHopper({...batch,candidates:[approved]},c,site,{now});
+ assert.equal(result.notes[0].text,`${candidate.copy.noteText}\n\n${candidate.url}\n\n${c.noteFooter.text}\n${c.noteFooter.url}`);
+ assert.ok(result.notes[0].html.includes('href="https://verycoolweekly.substack.com/"'));
+ assert.ok(!result.issue.items[0].xText.includes(c.noteFooter.text));
+ assert.equal(result.issue.items[0].bodyHtml,candidate.copy.bodyHtml);
+ assert.throws(()=>buildHopper({...batch,candidates:[approved]},{...c,noteFooter:{text:'Subscribe',url:'javascript:bad'}},site,{now}),/Notes footer/);
 });

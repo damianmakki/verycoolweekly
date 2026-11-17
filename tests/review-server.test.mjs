@@ -58,10 +58,11 @@ test('review API persists real decisions, gates notes, rejects stale saves and i
  assert.equal(approvedCandidates(approved).length,1);
  for(const bodyText of ['',42,'x'.repeat(20001)])assert.throws(()=>applyReviewChanges(approved,[{id:'test-pick',decision:'approved',note:'',bodyText}]));
  assert.equal(approved.candidates[0].copy.bodyHtml,revised.copy.bodyHtml);
- const social=await fetch(`${base}/api/review`,{method:'POST',headers,body:JSON.stringify({date,revision:reloaded.revision,changes:[{id:'test-pick',decision:'approved',note:'',xText:'A rewritten @maker post. #CSS',noteText:'My revised Note.\n\nA second paragraph.'}]})});
+ const social=await fetch(`${base}/api/review`,{method:'POST',headers,body:JSON.stringify({date,revision:reloaded.revision,changes:[{id:'test-pick',decision:'approved',note:'',xText:'A rewritten @maker post. #CSS',noteText:'My revised Note.\n\nA second paragraph.',buttonLabel:'Explore the Project'}]})});
  assert.equal(social.status,200);
  const persisted=await (await fetch(`${base}/api/review?date=${date}`)).json();
  assert.equal(persisted.batch.candidates[0].copy.xText,'A rewritten @maker post. #CSS');
+ assert.equal(persisted.batch.candidates[0].copy.buttonLabel,'Explore the Project');
  assert.equal(persisted.batch.candidates[0].copy.noteText,'My revised Note.\n\nA second paragraph.');
  assert.equal(persisted.batch.candidates[0].copy.bodyHtml,revised.copy.bodyHtml);
  assert.deepEqual(persisted.readyIds,[]);
@@ -76,4 +77,18 @@ test('direct Note edits retain only inline links whose names remain in the prose
  assert.deepEqual(result.candidates[0].copy.noteLinks,[candidate.copy.noteLinks[0]]);
  assert.equal(result.candidates[0].copy.xText,'Keep X.');
  assert.equal(candidate.copy.noteText,'Alice and Bob.');
+});
+
+test('button label edits preserve other drafts and invalidate approval until reviewed',()=>{
+ const candidate={id:'pick',decision:'pending',copy:{bodyHtml:'<p>Keep this.</p>',xText:'Keep X.',noteText:'Keep Notes.'}};
+ const batch={candidates:[candidate]};
+ const edited=applyReviewChanges(batch,[{id:'pick',decision:'approved',note:'',buttonLabel:'Explore the Archive'}]);
+ assert.equal(edited.candidates[0].copy.buttonLabel,'Explore the Archive');
+ assert.equal(edited.candidates[0].copy.bodyHtml,candidate.copy.bodyHtml);
+ assert.equal(edited.candidates[0].copy.xText,candidate.copy.xText);
+ assert.equal(edited.candidates[0].copy.noteText,candidate.copy.noteText);
+ assert.equal(edited.candidates[0].approvedHash,null);
+ const kept=applyReviewChanges(edited,[{id:'pick',decision:'approved',note:''}]);
+ assert.ok(kept.candidates[0].approvedHash);
+ for(const buttonLabel of ['',42,'x'.repeat(81)])assert.throws(()=>applyReviewChanges(batch,[{id:'pick',decision:'pending',note:'',buttonLabel}]),/button label/);
 });

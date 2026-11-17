@@ -1,6 +1,8 @@
 import { readFile, writeFile, mkdir, rename } from 'node:fs/promises';
-import { reviewCandidate, applyEditingNote, reviewPreview, buildHopper, validateBatch } from './editorial.mjs';
+import { reviewCandidate, applyEditingNote, reviewPreview, buildHopper, validateBatch, copyHash } from './editorial.mjs';
 import { integrateTags } from './integrate-tags.mjs';
+import { escape as escapeHtml } from './lib.mjs';
+import { readArtwork, mediaHash } from './artwork.mjs';
 const args=process.argv.slice(2),command=args[0];
 const arg=key=>{const i=args.indexOf(key);return i>=0?args[i+1]:undefined;};
 const date=arg('--batch');
@@ -30,6 +32,20 @@ if(command==='review'){
 }else if(command==='hopper'){
  const [config,site]=await Promise.all(['social.config.json','site.config.json'].map(async p=>JSON.parse(await readFile(p,'utf8'))));
  const result=buildHopper(batch,config,site),dir=`exports/hopper/${date}`;
+ const artwork=await readArtwork(process.cwd(),date);
+ const expected=result.manifest.selected.map(id=>{const c=batch.candidates.find(c=>c.id===id);return {id,copyHash:copyHash(c)};});
+ const figure=async asset=>{
+  if(!asset?.file)return '';
+  if(!/^[a-z0-9-]+\.(webp|png|jpg|gif)$/.test(asset.file))throw new Error('Invalid artwork filename');
+  const bytes=await readFile(`exports/media/${date}/${asset.file}`),ext=asset.file.split('.').at(-1);
+  return `<figure><img src="data:image/${ext==='jpg'?'jpeg':ext};base64,${bytes.toString('base64')}" alt="${escapeHtml(asset.alt||'')}" style="max-width:100%;height:auto"><figcaption>${escapeHtml(asset.credit||'')}</figcaption></figure>`;
+ };
+ const coverReady=!artwork.coverNeedsRefresh&&JSON.stringify(artwork.selected)===JSON.stringify(expected);
+ const cover=coverReady?await figure(artwork.cover):'';
+ if(cover){result.postHtml=result.postHtml.replace('</h1>','</h1>'+cover);result.emailHtml=result.emailHtml.replace('</h1>','</h1>'+cover);}
+ for(const id of result.manifest.selected){const c=batch.candidates.find(c=>c.id===id),asset=artwork.thumbnails?.find(a=>a.candidateId===id);const image=await figure(asset);if(image){const heading=`>${escapeHtml(c.title)}</span></a></h2>`;result.postHtml=result.postHtml.replace(heading,heading+image);result.emailHtml=result.emailHtml.replace(heading,heading+image);}}
+ result.manifest.artworkHash=mediaHash(artwork);
+ result.manifest.coverIncluded=!!cover;
  await mkdir(dir,{recursive:true});
  await writeFile(`${dir}/issue.json`,JSON.stringify(result.issue,null,2)+'\n');
  await writeFile(`${dir}/queue.json`,JSON.stringify(result.manifest,null,2)+'\n');

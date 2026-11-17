@@ -63,3 +63,27 @@ test('Monday research cadence starts Tuesday and rejects overflow instead of pos
  assert.deepEqual(plan.posts.map(p=>p.localDate),['2026-11-10','2026-11-10','2026-11-11','2026-11-11','2026-11-12','2026-11-12','2026-11-13']);
  assert.throws(()=>createSocialPlan({...issue,items:[...issue.items,{...issue.items[0],url:'https://example.org/seventh'}]},c,site,{now}),/up to six/);
 });
+
+test('weekday cadence gives five source posts Monday to Friday, then the roundup',()=>{
+ const c={...config,articleCadence:'weekday-daily',articleStartDay:'monday',articleTimes:['09:30']};
+ const five={...issue,items:issue.items.slice(0,5)};
+ const plan=createSocialPlan(five,c,site,{now});
+ assert.deepEqual(plan.posts.map(p=>p.localDate),['2026-11-09','2026-11-10','2026-11-11','2026-11-12','2026-11-13','2026-11-13']);
+ assert.ok(plan.posts.slice(0,5).every(p=>p.localTime==='09:30'));
+ assert.throws(()=>createSocialPlan(issue,c,site,{now}),/up to five/);
+ const exception={...c,editionOverrides:{'2026-11-13':{articleCadence:null,articleStartDay:'tuesday',articleTimes:['09:30','14:30']}}};
+ assert.equal(createSocialPlan(issue,exception,site,{now}).posts.length,7);
+ assert.throws(()=>createSocialPlan({...issue,date:'2026-11-20'},exception,site,{now}),/up to five/);
+});
+
+test('a dated six-pick exception keeps Friday daily posting and rejects duplicate slots',()=>{
+ const daily={...config,articleCadence:'weekday-daily',articleTimes:['09:30']};
+ const articleSlots=[4,3,2,2,1,0].map((daysBeforeFriday,n)=>({daysBeforeFriday,time:n===3?'14:30':'09:30'}));
+ const dated={...daily,editionOverrides:{'2026-11-13':{articleSlots}}};
+ const plan=createSocialPlan(issue,dated,site,{now});
+ assert.deepEqual(plan.posts.map(p=>p.localDate),['2026-11-09','2026-11-10','2026-11-11','2026-11-11','2026-11-12','2026-11-13','2026-11-13']);
+ assert.throws(()=>createSocialPlan({...issue,date:'2026-11-20'},dated,site,{now}),/up to five/);
+ assert.throws(()=>createSocialPlan(issue,{...daily,articleSlots:articleSlots.slice(1)},site,{now}),/must match/);
+ const duplicate=structuredClone(articleSlots);duplicate[3].time='09:30';
+ assert.throws(()=>createSocialPlan(issue,{...daily,articleSlots:duplicate},site,{now}),/unique/);
+});

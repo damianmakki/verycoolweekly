@@ -8,31 +8,19 @@ Publish the individual editorial picks first, then the full weekly roundup. Use 
 
 **Selected delivery: Buffer Free**, connected to **@verycoolweekly** on November 3, 2026. The dashboard confirms the Free plan, Twitter/X channel, and America/Denver timezone. No posts were created or scheduled during setup.
 
-Buffer supports automatic X publishing on its free tier, with ten queued posts per channel and three channels. The six individual links plus Friday roundup fit that queue. See [Buffer pricing](https://buffer.com/pricing) and [X integration](https://support.buffer.com/en-us/articles/using-xtwitter-with-buffer-nA84XnWtuU). Do not upgrade, buy X credits, or add paid tools.
+Buffer supports automatic X publishing on its free tier, with ten queued posts per channel and three channels. Five daily links plus the Friday roundup fit that queue; the current six-pick exception also fits. See [Buffer pricing](https://buffer.com/pricing) and [X integration](https://support.buffer.com/en-us/articles/using-xtwitter-with-buffer-nA84XnWtuU). Do not upgrade, buy X credits, or add paid tools.
 
-The review and draft generator runs locally. Buffer handles delivery **after approved posts are scheduled there**. There is no unattended uploader or API credential in this repository. The weekly research automation does not itself schedule or publish posts. Current channel ID is recorded in `social.config.json`; it is an identifier, not a credential.
+The review and draft generator runs locally. Buffer handles delivery **after approved posts are scheduled there**. There is no unattended uploader or API credential in this repository. The weekly task may schedule approved native drafts under the author’s standing release instruction; it still requires available native tools/account access. See [Approved weekly release](APPROVED-RELEASE.md). Current channel ID is recorded in `social.config.json`; it is an identifier, not a credential.
 
 ## Default cadence
 
-For an edition containing six editorial picks:
+From the November 20 edition onward, select five editorial picks. Each gets one X post and one Substack Note, Monday–Friday at 9:30 a.m. Mountain. Friday has the fifth daily pick **plus** the full roundup. The proposed full Substack article/email is 9:45 a.m.; the X roundup is 10 a.m., after the edition is published and its URL is verified. These are starting times, not engagement guarantees.
 
-| Day | Mountain time | Post |
-| --- | --- | --- |
-| Tuesday | 9:30 a.m. | Article 1 |
-| Tuesday | 2:30 p.m. | Article 2 |
-| Wednesday | 9:30 a.m. | Article 3 |
-| Wednesday | 2:30 p.m. | Article 4 |
-| Thursday | 9:30 a.m. | Article 5 |
-| Thursday | 2:30 p.m. | Article 6 |
-| Friday | 10 a.m. | The full roundup, after the web edition is live |
+Research/review runs Sunday at 6 p.m. Review before Monday’s first slot. Missed slots need an explicit revised schedule; never backfill or publish without approval. Fewer approved picks mean fewer posts, without repeats.
 
-These are starting slots, not a claim about optimal engagement. Evaluate clicks and meaningful responses after four editions, then adjust.
+`social.config.json` stores `articleCadence: weekday-daily`, one article time, matching Notes, the edition time and roundup time. The standard cadence supports five picks; explicit dated articleSlots overrides support an author-approved exception, including six for November 20. The November 13 edition is an explicit six-pick exception retaining the existing Tuesday–Thursday X slots. That exception does not carry into later weeks. Existing remote schedules and delivery ledgers are not rewritten by changing configuration or preparing drafts.
 
-`social.config.json` stores the account, IANA timezone `America/Denver`, two article times, and roundup time. The configured Tuesday-start planner supports 1–6 picks, spreads them across Tuesday–Thursday, never schedules more than two in a day, and leaves the roundup until Friday. Smaller editions have fewer posts; it does not fill empty slots with repeats. More than six picks needs an explicit alternative cadence. The legacy Monday-start option supports eight.
-
-### Editorial timing changes
-
-Research runs Monday at 2 p.m. Mountain. Review and approve the picks with editing notes on Monday afternoon or evening, then start the individual posts Tuesday. If review finishes later, reschedule the affected posts or use fewer slots; do not backfill missed times.
+The user chose Damian with Very Cool Weekly as the primary publication badge. The badge and publication Notes tab were enabled November 9. Notes carry a small subscription footer from social.config.json. All six pilot Notes were verified in the native scheduler November 9, matching the six existing X slots on November 10–12 at 9:30 a.m. and 2:30 p.m. Mountain. Public author visibility remains a separate check; preserve the current identity settings. Consult the private ledger before creating any further Notes. Issue Twelve article/email is confirmed for November 13 at 10:11 a.m. Mountain; its X roundup is scheduled at 10:30 a.m. with the cover and canonical Substack URL. The prior hold was released explicitly on November 9.
 
 Changes to an issue or social configuration change the content fingerprint. The future sender must reject an old approval after edits. If an article was already posted, preserve its record and revise or skip the remaining posts rather than starting the campaign again.
 
@@ -92,7 +80,7 @@ Archive campaigns require this explicit example flag and remain blocked. Draft i
 2. Use the connected Very Cool Weekly Buffer channel. Verify the exact handle and Free plan before adding posts. Use **custom date/time** from the approved plan; Buffer's initial suggested queue slots have not been replaced with our editorial cadence.
 3. Schedule only approved, edited article copy. Never backfill a missed time. Keep no more than ten posts queued and account for posts already present.
 4. Save each Buffer post ID, exact text, due time, batch fingerprint, and scheduling result in a private delivery ledger under `exports/`. Reconcile the queue before retrying an interrupted action so the same post is not scheduled twice.
-5. Hold the Friday roundup until the actual edition is live at its expected URL with the correct title and canonical URL. Confirm the previous picks are scheduled/sent or explicitly skipped.
+5. For a future Friday roundup, verify the actual canonical Substack URL and confirmed article/email schedule, then place X after publication under the standing release instruction. Immediate sharing requires a live destination. Confirm the previous picks are scheduled/sent or explicitly skipped.
 6. If approved copy changes after scheduling, update or remove the matching Buffer entry as well; rebuilding local exports does not change remote posts.
 7. Check Buffer's Sent/failed status after delivery. A queued post is not proof that X received it.
 

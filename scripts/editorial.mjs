@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { escape as e, httpUrl, rich, validateIssues } from './lib.mjs';
-import { createSocialPlan, zonedInstant } from './social-plan.mjs';
+import { createSocialPlan, zonedInstant, socialConfigForDate } from './social-plan.mjs';
 import { feedback } from './preferences.mjs';
 import { noteHtml } from './integrate-tags.mjs';
 const digest = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
@@ -18,6 +18,7 @@ export function validateBatch(batch) {
     if(!httpUrl(c.url)||urls.has(c.url))errors.push(`${c.id}: invalid or duplicate source URL`);urls.add(c.url);
     if(!c.title||!c.summary||!c.whyItFits||!c.checkedAt)errors.push(`${c.id}: missing research notes`);
     if(!c.copy?.bodyHtml||!c.copy.xText||!c.copy.noteText)errors.push(`${c.id}: missing channel copy`);
+    if(c.copy?.buttonLabel!==undefined&&(typeof c.copy.buttonLabel!=='string'||!c.copy.buttonLabel.trim()||c.copy.buttonLabel.length>80))errors.push(`${c.id}: roundup button label must contain 1–80 characters`);
     if(!['pending','approved','rejected'].includes(c.decision))errors.push(`${c.id}: invalid decision`);
     if(c.discovery){
       const d=c.discovery;
@@ -43,7 +44,7 @@ export function reviewCandidate(candidate,{decision,note='',preferenceFeedback},
 export function applyEditingNote(candidate,copy,at=new Date().toISOString()) {
   if(candidate.decision!=='approved'||!candidate.editingNote||candidate.notesApplied)throw new Error('No approved editing note is awaiting application');
   if(!copy?.bodyHtml||!copy.xText||!copy.noteText)throw new Error('Supply revised newsletter, X, and Notes copy');
-  const next={...structuredClone(candidate),copy,notesApplied:true,notesAppliedAt:at};
+  const next={...structuredClone(candidate),copy:{...(candidate.copy.buttonLabel!==undefined?{buttonLabel:candidate.copy.buttonLabel}:{}),...copy},notesApplied:true,notesAppliedAt:at};
   next.approvedHash=copyHash(next);
   next.history=[...(next.history||[]),{at,action:'editing-note-applied',note:candidate.editingNote}];
   return next;
@@ -55,17 +56,20 @@ export function approvedCandidates(batch) {
 }
 
 export function buildHopper(batch,config,site,{now=new Date()}={}) {
+  config=socialConfigForDate(config,batch.date);
   const selected=approvedCandidates(batch);
   if(!selected.length)throw new Error('No approved, edited picks are ready; nothing was queued');
+  const missingLabels=selected.filter(c=>!c.copy.buttonLabel?.trim());
+  if(missingLabels.length)throw new Error(`Review a roundup button label for each pick before preparing drafts: ${missingLabels.map(c=>c.id).join(', ')}`);
   if(selected.length>8)throw new Error('Select at most eight picks for one edition');
   const substackSource=site.publishing?.source==='substack';
-  const issue={...(batch.substackPostUrl?{substackPostUrl:batch.substackPostUrl}:{}),number:batch.issueNumber,slug:batch.issueSlug,date:batch.date,status:'draft',archived:false,
+  const issue={...(batch.substackPostUrl?{substackPostUrl:batch.substackPostUrl}:{}),...(batch.xSummary?{xSummary:batch.xSummary}:{}),number:batch.issueNumber,slug:batch.issueSlug,date:batch.date,status:'draft',archived:false,
     title:batch.issueTitle||`Issue ${batch.issueNumber}`,
     description:selected.map(c=>c.title).join('; ').slice(0,160),
     hero:{src:'assets/images/verycool.png',alt:'Very Cool Weekly'},
     introHtml:batch.introHtml||'<p>Here are this week’s design and development picks.</p>',
     items:selected.map(c=>({kind:'editorial',title:c.title,url:c.url,source:c.source||new URL(c.url).hostname,
-      bodyHtml:c.copy.bodyHtml,xText:c.copy.xText})),sponsor:null,products:[]};
+      bodyHtml:c.copy.bodyHtml,xText:c.copy.xText,buttonLabel:c.copy.buttonLabel})),sponsor:null,products:[]};
   const errors=validateIssues([issue]);if(errors.length)throw new Error(errors.join('\n'));
   // Article approval permits previewing picks before Friday; it does not publish the issue.
   const x=createSocialPlan({...issue,status:'scheduled'},config,site,{now});
@@ -74,28 +78,35 @@ export function buildHopper(batch,config,site,{now=new Date()}={}) {
   const jobs=x.posts.map(p=>({...p,channel:'x',state:p.missedSlot?'needs-reschedule':p.missingSubstackUrl?'waiting-substack-url':config.publishingProvider==='buffer-free'&&config.buffer?.channelId?'ready-for-buffer-scheduling':'waiting-connection',candidateId:p.kind==='article'?selected[x.posts.indexOf(p)].id:null}));
   const editionUrl=substackSource?site.url:new URL(`${issue.slug}/`,site.url).href;
   const websiteLinkLabel=substackSource?'Visit the Very Cool Weekly website':'Read this edition on the Very Cool Weekly website';
-  const postHtml=`<h1>${e(issue.title)}</h1>${rich(issue.introHtml)}${selected.map(c=>`<h2><a href="${e(c.url)}">${e(c.title)}</a></h2>${rich(c.copy.bodyHtml)}`).join('')}<p>Curated by ${e(site.author.name)}. <a href="${editionUrl}">${websiteLinkLabel}</a>.</p>`;
+  const roundupButtons=selected.map(c=>({candidateId:c.id,label:c.copy.buttonLabel,url:c.url}));
+  const postHtml=`<h1>${e(issue.title)}</h1>${rich(issue.introHtml)}${selected.map(c=>`<h2><a href="${e(c.url)}" style="color:#e3ff24"><span data-color="#e3ff24" style="color:#e3ff24">${e(c.title)}</span></a></h2>${rich(c.copy.bodyHtml)}<p class="button-wrapper" style="text-align:left" data-component-name="ButtonCreateButton" data-attrs="${e(JSON.stringify({url:c.url,text:c.copy.buttonLabel,action:null,class:null}))}"><a class="button primary" href="${e(c.url)}" style="display:inline-block;background:#e3ff24;color:#171717;border-radius:8px;padding:12px 18px;text-decoration:none">${e(c.copy.buttonLabel)}</a></p>`).join('')}<p>Curated by ${e(site.author.name)}. <a href="${editionUrl}">${websiteLinkLabel}</a>.</p>`;
   const emailHtml=`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${e(issue.title)}</title></head><body style="max-width:640px;margin:32px auto;padding:0 20px;font-family:Arial,sans-serif;line-height:1.6">${postHtml}<p><a href="{{ unsubscribe_url }}">Unsubscribe</a><br>{{ mailing_address }}</p></body></html>`;
-  const notePicks=selected.length<=3?selected:[selected[0],selected[Math.floor(selected.length/2)],selected.at(-1)];
+  const matchingNotes=config.noteCadence==='match-articles';
+  const notePicks=matchingNotes?selected:selected.length<=3?selected:[selected[0],selected[Math.floor(selected.length/2)],selected.at(-1)];
   const notes=notePicks.map((c,n)=>{
     const date=new Date(`${issue.date}T12:00:00Z`);date.setUTCDate(date.getUTCDate()-(3-n));
-    const scheduledAt=zonedInstant(date.toISOString().slice(0,10),'09:45',config.timeZone);
-    return {id:`${issue.slug}:substack:note:${c.id}`,channel:'substack-note',candidateId:c.id,text:`${c.copy.noteText}\n\n${c.url}`,html:noteHtml(c),
+    const scheduledAt=matchingNotes?x.posts[n].scheduledAt:zonedInstant(date.toISOString().slice(0,10),'09:45',config.timeZone);
+    const footer=config.noteFooter;
+    if(footer&&(!footer.text?.trim()||!httpUrl(footer.url)))throw new Error('Notes footer needs text and a valid publication URL');
+    return {id:`${issue.slug}:substack:note:${c.id}`,channel:'substack-note',candidateId:c.id,text:`${c.copy.noteText}\n\n${c.url}${footer?`\n\n${footer.text}\n${footer.url}`:''}`,html:noteHtml(c)+(footer?`<p>${e(footer.text)}<br><a href="${e(footer.url)}">${e(footer.url)}</a></p>`:''),
       scheduledAt,state:Date.parse(scheduledAt)<=now.getTime()?'needs-reschedule':'manual-scheduling',requiresLiveIssue:false};
   });
-  const releaseAt=zonedInstant(issue.date,'09:30',config.timeZone);
+  const releaseAt=zonedInstant(issue.date,config.editionTime||'09:30',config.timeZone);
+  if(matchingNotes&&Date.parse(releaseAt)<=Date.parse(x.posts.at(-2).scheduledAt))throw new Error('Friday edition must follow the final daily article');
+  if(Date.parse(releaseAt)>=Date.parse(x.posts.at(-1).scheduledAt))throw new Error('Friday roundup must follow the edition');
   jobs.push(...notes,{id:`${issue.slug}:substack:edition`,channel:'substack-edition',scheduledAt:releaseAt,state:'manual-scheduling',requiresLiveIssue:!substackSource,exclusiveDeliveryGroup:`${issue.slug}:weekly-email`});
   jobs.push({id:`${issue.slug}:email:edition`,channel:'email',scheduledAt:releaseAt,state:site.subscription?.provider==='substack'?'disabled-use-substack':'choose-email-provider',requiresLiveIssue:true,exclusiveDeliveryGroup:`${issue.slug}:weekly-email`});
   const waiting=batch.candidates.filter(c=>c.decision==='approved'&&!selected.some(s=>s.id===c.id)).map(c=>c.id);
   return {issue,postHtml,emailHtml,notes,manifest:{version:1,batch:batch.date,issue:issue.slug,contentHash:fingerprint,
     generatedAt:at,reviewHash:digest(batch),delivery:'export-only',selected:selected.map(c=>c.id),waitingForEdits:waiting,
     pending:batch.candidates.filter(c=>c.decision==='pending').map(c=>c.id),rejected:batch.candidates.filter(c=>c.decision==='rejected').map(c=>c.id),
+    roundupButtons,
     discoveryPlan:selected.map(c=>({candidateId:c.id,title:c.title,sourceUrl:c.url,discovery:c.discovery||null})),
     emailPolicy:site.subscription?.provider==='substack'?'Substack is the selected weekly email sender. The provider-neutral email is backup source only; do not send it separately.':'Send through one provider only; Substack email and a separate email broadcast are alternatives, not two sends to the same list.',jobs}};
 }
 
 export function reviewPreview(batch) {
   const lines=[`# Picks for ${batch.date}`,'','Reply in chat with the candidate ID, thumbs up/down, and any editing note. Nothing is approved by default.',''];
-  for(const c of batch.candidates)lines.push(`## ${c.id}: ${c.title}`,'',`[Read the source](${c.url}) · ${c.publishedDate||'Publication date unconfirmed'} · ${c.decision}`,'',c.summary,'',`Why it fits: ${c.whyItFits}`,'',`Draft commentary: ${c.copy.bodyHtml.replace(/<[^>]*>/g,'')}`,'',`X draft: ${c.copy.xText}`,'',`Notes draft: ${c.copy.noteText}`,'');
+  for(const c of batch.candidates)lines.push(`## ${c.id}: ${c.title}`,'',`[Read the source](${c.url}) · ${c.publishedDate||'Publication date unconfirmed'} · ${c.decision}`,'',c.summary,'',`Why it fits: ${c.whyItFits}`,'',`Draft commentary: ${c.copy.bodyHtml.replace(/<[^>]*>/g,'')}`,'',`Roundup button: ${c.copy.buttonLabel||'Not drafted yet'}`,'',`X draft: ${c.copy.xText}`,'',`Notes draft: ${c.copy.noteText}`,'');
   return lines.join('\n');
 }

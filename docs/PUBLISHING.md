@@ -1,6 +1,6 @@
 # Very Cool Weekly publishing
 
-The website is owned by this repository; email delivery is a separate service. The public home is **https://ruckuslabs.co/verycoolweekly/**. Each issue file is the single source for its web page, HTML email, text email, archive entry, and feed entry. Original issue URLs (issue-one through issue-eleven) are preserved under the new base path.
+The public home is **https://ruckuslabs.co/verycoolweekly/**. Substack publishes new complete editions and sends their weekly email; this repository owns the branded website and mirrors the published index and compatibility feeds. Local issue files remain portable draft/backup source and preserve the eleven original website editions and URLs (issue-one through issue-eleven).
 
 ## Current publishing workflow: Substack first
 
@@ -23,7 +23,7 @@ npm run check
 
 A normal build is offline and deterministic from its cached snapshot. A failed local refresh uses the existing snapshot. Deployment uses `sync:substack -- --strict`; a refresh failure stops the build and leaves the current live site untouched. No Substack credentials or unpublished feed endpoints are used.
 
-The Mac checks Substack’s public feed hourly through a Codex automation. Substack blocks GitHub-hosted feed requests with HTTP 403; the public feed works from this Mac. Keep this Mac awake with Codex running for refreshes. GitHub still hosts and builds the website, using the validated public snapshot already committed to the newsletter repository. No paid service or new account connection is required.
+The active **Very Cool Weekly website refresh** automation (`very-cool-weekly-website-refresh`) checks Substack’s public feed on Fridays at 10:20 a.m. America/Denver from the Mac. The pinned Pages deployment was verified on November 9, 2026 (source `8656759`, website `85a6582`; run `42673145608`). Substack blocks GitHub-hosted feed requests with HTTP 403; the public feed works from this Mac. Keep this Mac awake with Codex running for refreshes. GitHub still hosts and builds the website, using the validated public snapshot already committed to the newsletter repository. No paid service or new account connection is required.
 
 The automation clones a clean isolated newsletter checkout, installs dependencies and runs `npm run publish:substack -- --publish`. That command retrieves only the public RSS feed, sanitizes and checks the index, excludes future posts, and compares it with the live website. An unchanged index does nothing. For a change it runs the tests/build/check, commits only `content/substack/posts.json`, pushes without force, and dispatches the existing Ruckus Pages workflow pinned to the exact newsletter commit. It reuses a matching pending deployment rather than dispatching duplicates. Failed refreshes or checks leave the live site unchanged. After dispatch, verify the matching GitHub run and live homepage/archive/feed; dispatch is not deployment success. The source CI validates source changes but does not send email.
 
@@ -53,18 +53,13 @@ Copy the relevant objects from `content/templates/commercial-slots.json` into an
 
 Start with a single sponsor and at most one affiliate or own product per issue. Sell direct fixed-fee placements after the first several new editions establish delivered audience and click baselines. Use clicks, conversions, and revenue per issue to evaluate fit; interpret open rates cautiously. Keep the majority of the issue useful editorial material.
 
-## X posts before the weekly roundup
+## Weekly release cadence
 
-Use `npm run social:plan -- --issue issue-12` to generate local X drafts. See [the X posting plan](X-POSTING.md) for the Tuesday–Thursday article drip and Friday roundup. For this cadence, review the Monday-afternoon shortlist before Tuesday posting; the website/email-only cadence below allows later selection. Buffer Free is connected to @verycoolweekly. The planner creates drafts; approved posts still need scheduling in Buffer.
+Use `npm run social:plan -- --issue issue-12` to preview a local X plan. See [X posting](X-POSTING.md), [the editorial workflow](EDITORIAL-WORKFLOW.md) and [approved weekly release](APPROVED-RELEASE.md) for the current review and scheduling process.
 
-## A sustainable weekly cadence
+Research starts Sunday at 6 p.m. America/Denver. Normally five approved picks receive matching X posts and Substack Notes Monday–Friday at 9:30 a.m., followed by the Friday Substack article/email at 9:45 a.m. and X roundup at 10 a.m. Explicit dated overrides in `social.config.json` preserve the six-pick November 13 and November 20 editions. Missed slots require an approved revised schedule; never backfill them.
 
-- Monday–Tuesday: collect 10–15 candidates with original source, notes, date, category, and why it matters. Save a short list; skip recycled announcements and unsupported claims.
-- Wednesday: select 5–7, write concise original commentary, verify links, and check image permissions. Draft the issue from the template.
-- Thursday: finalize sponsor copy, verify affiliate terms and destinations, run the build/checks, review both editions, and send a test email.
-- Friday: publish the website, verify it publicly, then release the email at the chosen local time. After 48–72 hours, record delivery, clicks, unsubscribes, sponsor performance, and product conversions.
-
-As the publication grows, add a separate candidate inbox and sponsor ledger first. The JSON issue files stay the approved publication record. A browser editor or CMS can later write this same schema without changing rendering. Automated research may create drafts; a person should still verify sources and commercial claims before changing status.
+Completed author review is the release gate under the standing instruction. Local draft generation does not schedule or send anything: verify the existing Buffer/Substack accounts, approved versions, native schedules, audience and actual Substack destination. Substack sends the sole weekly email. The separate Friday 10:20 a.m. website task mirrors already published editions. Preserve review history and delivery receipts in private local storage; never commit them or copy them into a public build.
 
 ## Launch checklist
 

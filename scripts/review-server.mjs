@@ -8,6 +8,7 @@ import { promisify } from 'node:util';
 import { reviewCandidate, validateBatch, approvedCandidates, copyHash } from './editorial.mjs';
 import { feedback, readPreferences } from './preferences.mjs';
 import { readArtwork, saveArtwork, mediaHash } from './artwork.mjs';
+import { socialConfigForDate } from './social-plan.mjs';
 
 const run = promisify(execFile);
 const digest = value => createHash('sha256').update(value).digest('hex');
@@ -25,6 +26,10 @@ export function applyReviewChanges(batch, changes) {
     if (change.bodyText !== undefined && (typeof change.bodyText !== 'string' || !change.bodyText.trim() || change.bodyText.length > 20000)) throw new Error('My take must contain 1–20000 characters');
     const editedHtml = change.bodyText === undefined ? current.copy?.bodyHtml : change.bodyText.replace(/\r\n?/g,'\n').split(/\n\n+/).map(text=>`<p>${text.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])).replace(/\n/g,'<br>')}</p>`).join('\n');
     const editedCopy={...current.copy,bodyHtml:editedHtml};
+    if(change.buttonLabel!==undefined){
+      if(typeof change.buttonLabel!=='string'||!change.buttonLabel.trim()||change.buttonLabel.length>80)throw new Error('Roundup button label must contain 1–80 characters');
+      editedCopy.buttonLabel=change.buttonLabel;
+    }
     for(const [field,label] of [['xText','X post'],['noteText','Substack Note']]){
       if(change[field]===undefined)continue;
       if(typeof change[field]!=='string'||!change[field].trim()||change[field].length>20000)throw new Error(`${label} must contain 1–20000 characters`);
@@ -62,7 +67,11 @@ export function createReviewServer({root = resolve(dirname(fileURLToPath(import.
     const ready=approvedCandidates(batch);
     const media=await readArtwork(root,date),mediaRevision=mediaHash(media);
     media.stale=JSON.stringify(media.selected)!==JSON.stringify(ready.map(c=>({id:c.id,copyHash:copyHash(c)})));
-    return {batch, media, mediaRevision, revision:digest(raw), readyIds:ready.map(c=>c.id)};
+    let config={articleStartDay:'tuesday'};
+    try {config=JSON.parse(await readFile(resolve(root,'social.config.json'),'utf8'));} catch(error) {if(error.code!=='ENOENT')throw error;}
+    config=socialConfigForDate(config,date);
+    const maxPicks=config.articleSlots?.length||(config.articleCadence==='weekday-daily'?5:config.articleStartDay==='tuesday'?6:8);
+    return {batch, media, mediaRevision, maxPicks, revision:digest(raw), readyIds:ready.map(c=>c.id)};
   }
   return http.createServer(async (req, res) => {
     const host = `127.0.0.1:${res.socket.localPort}`;
@@ -104,7 +113,7 @@ export function createReviewServer({root = resolve(dirname(fileURLToPath(import.
           }
           if (url.pathname === '/api/prepare') {
             const kept=current.batch.candidates.filter(c=>c.decision==='approved');
-            if (!kept.length || kept.length>6 || kept.length!==current.readyIds.length) throw new Error('Choose up to six ready picks and apply outstanding editing notes before preparing drafts.');
+            if (!kept.length || kept.length>current.maxPicks || kept.length!==current.readyIds.length) throw new Error(`Choose up to ${current.maxPicks} ready picks and apply outstanding editing notes before preparing drafts.`);
             const {stdout}=await run(process.execPath,['scripts/editorial-cli.mjs','hopper','--batch',input.date],{cwd:root});
             return send(200,{message:stdout.trim()});
           }
